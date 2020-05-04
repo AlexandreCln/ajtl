@@ -1,12 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Association des Jeux pour Tous du Loiret">
+        <title>{% block title %}AJTL{% endblock %}</title>
+        {{ encore_entry_link_tags('app') }}
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
+        <header>
+            {% block navbar %}{% endblock %}
+        </header>
+
         {% block body %}{% endblock %}
+
+        {% block footer %}{% endblock %}
+
+        {{ encore_entry_script_tags('app') }}
         {% block javascripts %}{% endblock %}
+
     </body>
 </html>
