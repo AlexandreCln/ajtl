@@ -1,0 +1,14 @@
+@import "../colors";
+
+.logo-ajtl {
+  height: 3.3em;
+  border-radius: 50%;
+}
+
+.custom-toggler.navbar-toggler {
+  border-color: green;
+}
+
+.dropdown-item:hover {
+  background-color: lighten($secondary, 8%);
+}
