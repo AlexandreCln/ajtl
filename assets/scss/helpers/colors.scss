@@ -5,8 +5,8 @@ $lighten: #F8F1E0;
 
 // Overwrite Bootstrap theme
 $theme-colors: (
-    "primary": #2E6095,
-    "primary-dark": #1D366D,
-    "secondary": #B14145,
-    "lighten": #F8F1E0,
+    "primary": $primary,
+    "primary-dark": $primary-dark,
+    "secondary": $secondary,
+    "lighten": $lighten,
 );

@@ -1,12 +1,19 @@
-@import "../colors";
+@import "../helpers/colors";
+
+.nav-item {
+  font-weight: 400;
+  margin: 0 6px 0 6px;
+}
 
 .logo-ajtl {
-  height: 3.3em;
+  height: 6rem;
   border-radius: 50%;
 }
 
+//Todo: change navbar toggler color
 .custom-toggler.navbar-toggler {
-  border-color: green;
+  border-color: blue;
+  //doesnt work
 }
 
 .dropdown-item:hover {

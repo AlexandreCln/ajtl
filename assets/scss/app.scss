@@ -1,11 +1,16 @@
 // Reset CSS
-@import "common/_reset";
+@import "helpers/reset";
 
 // Colors
-@import "colors";
+@import "helpers/colors";
+
+// Fonts
+@import "helpers/fonts";
 
 // Bootstrap
 @import "~bootstrap/scss/bootstrap";
 
 // Custom
+@import "helpers/global";
 @import "common/_navbar";
+@import "pages/home";
