@@ -1,3 +1,43 @@
-<div class="sidebar-events">
-    <h2>Événements</h2>
+{#<div class="col-md-3 bg-primary m-1 event">#}
+{#    <h3>Événement 1</h3>#}
+{#</div>#}
+{#<div class="col-md-3 bg-primary m-1 event">#}
+{#    <h3>Événement 2</h3>#}
+{#</div>#}
+{#<div class="col-md-3 bg-primary m-1 event">#}
+{#    <h3>Événement 3</h3>#}
+{#</div>#}
+{#<div class="col-md-3 bg-light m-1 no-event">#}
+{#    <h3>Événement 4</h3>#}
+{#</div>#}
+
+{% set nbMax = 4 %}
+
+<div class="row bg-lighter">
+
+{#    Todo: gérer width cards en mobile, ou passer à 1 évenements par ligne#}
+
+    {% for i in 0..nbMax %}
+        <div class="col-md-10 col-xl-6 mx-auto card-header">
+            <div class="col-12 event">
+                <div class="card">
+                    <div class="card-header">
+                        <p class="">Donjon & Dragon : Vous allez mourrir !</p>
+
+                    </div>
+                    <div id="body-event{{ loop.index }}" class="collapse">
+                        <p>Coucou les zaaaAAAmis</p>
+                    </div>
+                    <div class="card-footer btn text-center" data-toggle="collapse" data-target="#body-event{{ loop.index }}">
+                       Voir \/
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    <div class="col-md-10 col-xl-6 mx-auto">
+        <div class="col-12 bg-secondary no-event">
+            <a class="btn btn-outline-secondary text-light rounded">Proposez un Événement !</a>
+        </div>
+    </div>
 </div>

@@ -2,18 +2,12 @@
 
 {% block body %}
 
-    {% include 'common/_top-banner.html.twig' %}
-
-    <div class="container mt-5 mb-5">
-        <h1 class="text-primary-dark">Body</h1>
-        <p class="text-primary-dark">Now, for interaction-heavy pages, smaller text sizes are perfectly acceptable. In
-            fact, depending on the
-            amount of data your user is taking in at once, even 18px text is uncomfortably large. Look at your (web)
-            inbox, look at twitter, look at any apps you use that require scanning over reading, look at apps that show
-            you data – you’re going to be hard-pressed to find sustained paragraphs of 18px text. Instead, 14px-16px is
-            the norm. But there won’t be just one font size. There will likely be smaller sizes for less important
-            things, and larger sizes for more important things (titles and subtitles and sub-subtitles, etc.), and it’ll
-            all be blended together in a giant hodgepodge.</p>
+    <div class="col-md-7 p-4 text-center">
+        <h2 class="m-3 text-primary-dark">Prochains Événements</h2>
+        {% include 'home/_sidebar_events.html.twig' %}
     </div>
+{#    <div class="col-md-3 bg-primary-dark m-5">#}
+{#        {% include 'home/_main_content.html.twig' %}#}
+{#    </div>#}
 
 {% endblock %}
