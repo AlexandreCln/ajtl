@@ -1,4 +1,8 @@
 @import "../helpers/colors";
+$hamburger-layer-color: #ffffff !default;
+$hamburger-padding-y: 10px !default;
+$hamburger-padding-x: 13px !default;
+$hamburger-layer-width: 33px !default;
 
 .nav-item {
   font-weight: 400;
@@ -9,11 +13,13 @@
   height: 6rem;
   border-radius: 50%;
 }
-
-//Todo: change navbar toggler color
-.custom-toggler.navbar-toggler {
-  border-color: blue;
-  //doesnt work
+.navbar-toggler:hover,
+.navbar-toggler:active,
+.navbar-toggler:focus,
+.navbar-toggler {
+  border: none;
+  outline: 0;
+  background-color: $secondary;
 }
 
 .dropdown-item:hover {
