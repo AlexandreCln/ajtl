@@ -1,35 +1,30 @@
-{#<div class="col-md-3 bg-primary m-1 event">#}
-{#    <h3>Événement 1</h3>#}
-{#</div>#}
-{#<div class="col-md-3 bg-primary m-1 event">#}
-{#    <h3>Événement 2</h3>#}
-{#</div>#}
-{#<div class="col-md-3 bg-primary m-1 event">#}
-{#    <h3>Événement 3</h3>#}
-{#</div>#}
-{#<div class="col-md-3 bg-light m-1 no-event">#}
-{#    <h3>Événement 4</h3>#}
-{#</div>#}
-
 {% set nbMax = 4 %}
 
 <div class="row bg-lighter">
 
-{#    Todo: gérer width cards en mobile, ou passer à 1 évenements par ligne#}
+    {#    Todo: gérer width cards en mobile, ou passer à 1 évenements par ligne#}
 
     {% for i in 0..nbMax %}
         <div class="col-md-10 col-xl-6 mx-auto card-header">
-            <div class="col-12 event">
-                <div class="card">
+            <div class="col-12">
+                <div class="card text-primary-dark">
                     <div class="card-header">
-                        <p class="">Donjon & Dragon : Vous allez mourrir !</p>
-
+                        <div class="d-flex justify-content-between">
+                            <p class="activity-event">Jeux de Rôle</p>
+                            <p class="date-event">8 Mai 2020 à 18:00</p>
+                        </div>
+                        <p class="m-0 text-nowrap">Donjon & Dragon : Vous allez mourrir !</p>
                     </div>
                     <div id="body-event{{ loop.index }}" class="collapse">
-                        <p>Coucou les zaaaAAAmis</p>
+                        <p class="m-3">Iamque lituis cladium concrepantibus internarum non celate ut antea turbidum saeviebat
+                            ingenium a veri consideratione detortum et nullo inpositorum vel conpositorum fidem
+                            sollemniter inquirente nec discernente a societate noxiorum insontes velut exturbatum e
+                            iudiciis fas omne discessit.</p>
+                        <a href="" class="btn btn-outline-secondary mb-3">Je m'inscris !</a>
                     </div>
-                    <div class="card-footer btn text-center" data-toggle="collapse" data-target="#body-event{{ loop.index }}">
-                       Voir \/
+                    <div class="card-footer btn text-center text-light bg-primary" data-toggle="collapse"
+                         data-target="#body-event{{ loop.index }}">
+                        Voir \/
                     </div>
                 </div>
             </div>
