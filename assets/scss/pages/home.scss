@@ -4,6 +4,22 @@
 }
 
 // Sidebar Events
-.activity-event,.date-event {
+.event-name {
+  font-size: 19px;
+  font-weight: 400;
+}
+
+.event-info-header p,
+.info-body-event p {
   font-size: 14px;
+}
+
+.see-more:after {
+  font-family: "Font Awesome 5 Free";
+  content: '\f077';
+}
+
+.see-more.collapsed:after {
+  font-family: "Font Awesome 5 Free";
+  content: '\f078';
 }

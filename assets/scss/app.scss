@@ -7,13 +7,19 @@
 // Fonts
 @import "helpers/fonts";
 
-// Bootstrap
+// Packages
 @import "~bootstrap/scss/bootstrap";
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+@import '~@fortawesome/fontawesome-free/scss/solid';
+// Todo: solid = version gratuite ?
+//@import '~@fortawesome/fontawesome-free/scss/regular';
+//@import '~@fortawesome/fontawesome-free/scss/brands';
 
 // Custom
 @import "helpers/global";
 @import "common/_navbar";
+@import "common/_footer";
 @import "pages/home";
 
-// Hamburgers
+// Hamburger menu animation
 @import "~hamburgers/_sass/hamburgers/hamburgers";
