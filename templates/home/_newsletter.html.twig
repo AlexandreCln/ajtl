@@ -1,0 +1,15 @@
+<div class="text-primary-dark">
+    <p class="font-italic">J'aimerais reçevoir les newsletters :</p>
+    {{ form_start(newsletterForm) }}
+    {{ form_errors(newsletterForm) }}
+
+    {{ form_row(newsletterForm.choice1) }}
+    {{ form_row(newsletterForm.choice2) }}
+    {{ form_row(newsletterForm.choice3) }}
+
+    <div class="d-flex justify-content-center m-3 row">
+        {{ form_widget(newsletterForm.email, { 'attr': {'class': 'm-1 col-sm-6 col-lg-6 col-xl-5 border-secondary'} }) }}
+        {{ form_widget(newsletterForm.submit, { 'attr': {'class': 'm-1 col-sm-6 col-lg-3 btn-secondary'} }) }}
+    </div>
+    {{ form_end(newsletterForm) }}
+</div>

@@ -15,15 +15,18 @@
 }
 
 .see-more:after {
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  content: '\f077';
+  //font-family: "Font Awesome 5 Free";
+  //font-weight: 900;
+  //content: '\f078';
+  content: '+';
 }
 
 .see-more.collapsed:after {
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  content: '\f078';
+  //font-family: "Font Awesome 5 Free";
+  //font-weight: 900;
+  //content: '\f077';
+  content: '-';
+
 }
 
 // Home infos
@@ -31,7 +34,10 @@
   p, a {
     font-size: 20px;
   }
-  i {
+  i.fa-envelope {
     font-size: 23px;
+  }
+  i.fa-phone {
+    font-size: 20px;
   }
 }
