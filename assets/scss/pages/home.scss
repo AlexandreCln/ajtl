@@ -16,21 +16,22 @@
 
 .see-more:after {
   font-family: "Font Awesome 5 Free";
+  font-weight: 900;
   content: '\f077';
 }
 
 .see-more.collapsed:after {
   font-family: "Font Awesome 5 Free";
+  font-weight: 900;
   content: '\f078';
 }
 
-// Access info
-.access-infos {
-  span.bold {
-    font-weight: 400;
+// Home infos
+.home-info-contact {
+  p, a {
+    font-size: 20px;
   }
-
-  iframe {
-    width: 100%;
+  i {
+    font-size: 23px;
   }
 }
