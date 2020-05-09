@@ -4,14 +4,15 @@
 
     {% include 'common/_top-banner.html.twig' %}
 
-    <div class="row">
-        <div class="p-0 col-10 offset-1 col-lg-4 text-center">
+    <div class="d-flex flex-wrap">
+        <div class="col-12 offset-lg-1 col-lg-4 p-lg-0 text-center mb-5">
             <h2 class="mb-3 text-primary-dark">Prochains Événements</h2>
             {% include 'home/_sidebar_events.html.twig' %}
         </div>
 
-        <div class="col-lg-5 offset-lg-1 bg-primary-dark">
-            {% include 'home/_main_content.html.twig' %}
+        <div class="col-12 offset-lg-1 col-lg-5 p-lg-0 text-center mb-5">
+            <h2 class="mb-3 text-primary-dark">Où nous trouver ?</h2>
+            {% include 'home/_access-info.html.twig' %}
         </div>
     </div>
 

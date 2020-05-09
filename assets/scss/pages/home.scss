@@ -3,7 +3,7 @@
   font-size: 30px;
 }
 
-// Sidebar Events
+// Sidebar events
 .event-name {
   font-size: 19px;
   font-weight: 400;
@@ -22,4 +22,15 @@
 .see-more.collapsed:after {
   font-family: "Font Awesome 5 Free";
   content: '\f078';
+}
+
+// Access info
+.access-infos {
+  span.bold {
+    font-weight: 400;
+  }
+
+  iframe {
+    width: 100%;
+  }
 }
