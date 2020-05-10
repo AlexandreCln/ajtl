@@ -1,0 +1,57 @@
+<div class="row partners no-gutters">
+    {% for i in 0..1 %}
+        <div class="col-lg-5 offset-lg-1 mb-4 p-4">
+            <div class="d-flex justify-content-center align-items-center flex-wrap">
+                <img class="bg-primary rounded shadow" src="{{ asset('build/logo-miskatonic-shop.png') }}"
+                     alt="">
+                <div class="partner-infos ml-3 mr-3">
+                    <h3 class="text-primary text-center mb-3">Miskatonic Shop</h3>
+                    <p><span class="text-secondary">Adresse: </span>13 rue des Trois Clés, 45000 Orléans </p>
+                    <p><span class="text-secondary">Téléphone: </span>02 38 24 58 70</p>
+                    <p><span class="text-secondary">Horaires: </span> <br>
+                        Le lundi de 14h à 19h <br>
+                        Du Mardi au Samedi de 10h à 12h30 et de 14h à 19h
+                    </p>
+                </div>
+            </div>
+            <hr class="mx-3">
+            <div class="d-flex flex-column align-items-center">
+                <p class="mx-3 tex">
+                    Un magasin spécialisé dans le manga. On y trouve toutes les nouveautés, des shojo, shonen, yaoi,
+                    seinen,
+                    etc, mangas d'occasion, goodies, jeux, Bd, magazines,... <br>
+                    Il y a presque toujours de la musique d'anime en fond. Vendeurs/Vendeuses très sympathiques et
+                    accueillants,
+                    qui nous font toujours rire lorsqu'on y va. <br>
+                    Présence d'un rayon Jeux de Rôle et accessoires de GN.
+                </p>
+                <a href="#" class="btn btn-outline-secondary ml-3"><i class="fas fa-globe-americas"></i></i> Facebook</a>
+            </div>
+        </div>
+        <div class="col-lg-5 p-4 mb-4">
+            <div class="d-flex justify-content-center align-items-center flex-wrap">
+                <img class="bg-secondary rounded shadow" src="{{ asset('build/logo-eureka.png') }}"
+                     alt="">
+                <div class="partner-infos ml-3 mr-3">
+                    <h3 class="text-primary text-center mb-3">Euréka</h3>
+                    <p><span class="text-secondary">Adresse: </span>Galerie du Châtelet, 45000 Orléans</p>
+                    <p><span class="text-secondary">Téléphone: </span>02 38 53 23 62</p>
+                    <p><span class="text-secondary">Horaires: </span> <br>
+                        Le lundi de 14h à 19h <br>
+                        Du Mardi au Samedi de 10h à 19h
+                    </p>
+                </div>
+            </div>
+            <hr class="mx-3">
+            <div class="d-flex flex-column align-items-center">
+                <p class="mx-3">
+                    Idées cadeaux, décoration, jeux de société et modélisme. <br>
+                    Souvent comparé à une caverne aux merveilles, Eureka vous propose un vaste choix dobjets originaux
+                    et insolites.Nous avons une grande panoplie de produits : Coussins Livingston, bucolique,
+                    Lomography, Artoyz, 100Drine, Ritzenhoff ,Ibride, mini hélicoptères, échecs etc.
+                </p>
+                <a href="#" class="btn btn-outline-secondary ml-3"><i class="fas fa-sm fa-link"></i> Site</a>
+            </div>
+        </div>
+    {% endfor %}
+</div>
