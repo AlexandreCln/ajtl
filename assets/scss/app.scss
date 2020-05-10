@@ -1,11 +1,11 @@
 // Reset CSS
-@import "helpers/reset";
+@import "helpers/_reset";
 
 // Colors
-@import "helpers/colors";
+@import "helpers/_colors";
 
 // Fonts
-@import "helpers/fonts";
+@import "helpers/_fonts";
 
 // Packages
 @import "~bootstrap/scss/bootstrap";
@@ -15,7 +15,7 @@
 //@import '~@fortawesome/fontawesome-free/scss/brands';
 
 // Custom
-@import "helpers/global";
+@import "helpers/_global";
 @import "common/_navbar";
 @import "common/_footer";
 @import "pages/home";
