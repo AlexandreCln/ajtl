@@ -6,26 +6,26 @@
 
     <div class="d-flex flex-wrap">
         <div class="col-12 offset-lg-1 col-lg-4 p-lg-0 text-center mb-5">
-            <h2 class="mb-3 text-primary-dark">Prochaines Activités</h2>
+            <h2 class="mb-3 text-primary">Prochaines Activités</h2>
             {% include 'home/_sidebar_events.html.twig' %}
         </div>
 
         <div class="col-12 offset-lg-1 col-lg-5 p-lg-0 text-center mb-5">
-            <h2 class="d-none mb-3 text-primary-dark">main
-                event</h2> {#Todo: +ne pas afficher dans liste le mainEvent #}
+            <h2 class="d-none mb-3 text-primary-dark">main event</h2> {#Todo: +ne pas afficher dans liste le mainEvent #}
 
-            <h2 class="mb-3 text-primary-dark">Nous contacter</h2>
-            {% include 'home/_info-contact.html.twig' %}
-
-            <h2 class="mb-3 text-primary-dark mt-5">Où nous trouver ?</h2>
+            <h2 class="mb-3 text-primary">Où nous trouver ?</h2>
             {% include 'home/_access-info.html.twig' %}
 
-            <h2 class="mb-3 text-primary-dark mt-5">Pour restez informé</h2>
+            <h2 class="mb-3 text-primary mt-5">Nous contacter</h2>
+            {% include 'home/_info-contact.html.twig' %}
+
+            <h2 class="mb-3 text-primary mt-5">Restez informé</h2>
             {{ render(path('newsletter_render')) }}
         </div>
     </div>
 
-    <h2 class="mb-3 text-primary-dark text-center mb-4">Ils nous soutiennent</h2>
+    <h2 class="mb-3 text-primary-dark text-center mb-4">Nos partenaires</h2>
     {% include 'home/_partners.html.twig' %}
+    <img class="logo-olivet mx-auto mb-5" src="{{ asset('build/logo-olivet.png') }}" alt="logo olivet">
 
 {% endblock %}

@@ -1,0 +1,79 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Todo: nom activité{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1 class="text-primary mt-5">Jeux de Rôle & Grandeur Nature</h1>
+    </div>
+    <img class="activity-image" src="{{ asset('build/taverne.jpeg') }}" alt="">
+    <div class="container">
+        <div class="activities d-flex justify-content-around align-items-center flex-wrap text-center text-primary-dark">
+            <div class="m-4">
+                <p class="text-secondary bold">Jours & Horaires:</p>
+                <p>Jeudis à 19h30 <br>
+                    Dimanches à 19h</p>
+            </div>
+            <div class="m-4">
+                <p><span class="text-secondary bold">Lieux: </span><br>
+                    <a href="">Foyer des Seniors <i class="fas fa-sm fa-search-plus ml-2"></i></a>
+                </p>
+            </div>
+            <div class="m-4">
+                <img class="referent-pic rounded-circle shadow" src="{{ asset('build/yoan.webp') }}" alt="">
+                <p class="m-0"><span class="text-secondary bold">Référent: </span>Yoann</p>
+                <p>06 00 00 00 00</p>
+            </div>
+        </div>
+        <div class="mb-5">
+            <h2 class="text-primary">À propos</h2>
+            <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquam, animi
+                asperiores deleniti natus non
+                temporibus voluptas? Alias dolore minus molestiae neque nisi porro provident quae quo sed, sequi
+                voluptatem.
+                A alias aut facilis fugiat ipsa maiores neque odio placeat! Commodi dicta dignissimos doloremque fugit
+                illo
+                laborum officia officiis optio perspiciatis placeat praesentium quas quo reiciendis, sed sequi tempora,
+                voluptatum.
+            </p>
+        </div>
+
+        <h2 class="text-primary">Prochaines activités</h2>
+        <div class="row mb-5 text-center">
+            {% for i in 0..3 %}
+                <div class="col col-md-6">
+                    <div class="card text-primary-dark text-nowrap mt-4 shadow">
+                        <div class="card-header p-1">
+                            <div class="event-info-header d-flex justify-content-between">
+                                <p class="m-0 ml-2 badge text-light badge-{{ i % 2 == 0 ? 'warning':'success' }}">
+                                    {{ i % 2 == 0 ? 'Jeux de Plateau':'Mah-Jong' }}
+                                </p>
+                                <p class="m-0 mr-2">8 Mai 2020 à 18:00</p>
+                            </div>
+                            <p class="bold m-0">Donjon & Dragon : Vous allez mourrir !</p>
+                        </div>
+                        <div id="body-event{{ loop.index }}" class="collapse">
+                            <p class="m-3 event-short-desc text-wrap">Il est pas une activité improductive, ni celui qui
+                                cherche profit
+                                pour une épargne excédentaire au-delà de la satisfaction de ces besoins
+                                Chaque conférence populaire de base choisit son secrétariat
+                                Tout système de gouvernement contraires à cette méthode, la méthode des conférences
+                                populaires, est
+                                antidémocratique.
+                            </p>
+                            <div class="info-body-event d-flex justify-content-between">
+                                <p class="m-0 ml-3"><i class="fas fa-home"></i> Foyer des Seniors</p>
+                                <p class="m-0 mr-3"><i class="fas fa-users"></i> 4 place(s) restantes</p>
+                            </div>
+                            <a href="" class="btn btn-outline-secondary m-3">Je m'inscris !</a>
+                        </div>
+                        <div class="see-more card-footer btn text-center text-light bg-primary" data-toggle="collapse"
+                             data-target="#body-event{{ loop.index }}">
+                            Voir
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

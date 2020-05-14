@@ -10,6 +10,9 @@
     <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
         <ul class="navbar-nav align-items-center">
             <li class="nav-item text-light">
+                <a class="nav-link text-light" href="{{ path('home') }}">ACCUEIL</a>
+            </li>
+            <li class="nav-item text-light">
                 <a class="nav-link text-light" href="#">AGENDA</a>
             </li>
             <li class="nav-item dropdown">
@@ -18,7 +21,7 @@
                     NOS ACTIVITÉS
                 </a>
                 <div class="dropdown-menu bg-secondary border-0" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item text-light text-center" href="#">JEUX DE RÔLE</a>
+                    <a class="dropdown-item text-light text-center" href="{{ path('activities') }}">JEUX DE RÔLE</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item text-light text-center" href="#">JEUX DE PLATEAUX</a>
                     <div class="dropdown-divider"></div>
