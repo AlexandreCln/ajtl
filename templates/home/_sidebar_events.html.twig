@@ -1,15 +1,15 @@
-{% set nbMax = 6 %}
+{% set nbMax = 5 %}
 
-{% for i in 0..nbMax %}
+{% for i in 1..nbMax %}
     <div class="card text-primary-dark text-nowrap mt-4 shadow">
         <div class="card-header p-1">
             <div class="event-info-header d-flex justify-content-between">
                 <p class="m-0 ml-2 badge text-light badge-{{ i % 2 == 0 ? 'warning':'success' }}">
-                    {{ i % 2 == 0 ? 'Jeux de Plateau':'Mah-Jong' }}
+                    {{ i % 2 == 0 ? 'Jeux de Rôle':'Jeux de Plateau' }}
                 </p>
                 <p class="m-0 mr-2">8 Mai 2020 à 18:00</p>
             </div>
-            <p class="bold m-0">Donjon & Dragon : Vous allez mourrir !</p>
+            <p class="bold m-0">{{ i % 2 == 0 ? 'Donjon & Dragon : Vous allez mourrir !':'Mah-Jong' }}</p>
         </div>
         <div id="body-event{{ loop.index }}" class="collapse">
             <p class="m-3 event-short-desc text-wrap">Il est pas une activité improductive, ni celui qui cherche profit

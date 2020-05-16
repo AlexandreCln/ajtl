@@ -1,0 +1,58 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Hello PresentationController!{% endblock %}
+
+{% block body %}
+    <div class="container text-center">
+        <h2 class="mt-5 text-primary">L'équipe</h2>
+        <div class="mb-5 row">
+            {% for i in 0..1 %}
+                <div class="mt-4 member-team col-sm-6 col-md-4">
+                    <img class="rounded-circle shadow mx-auto" src="{{ asset('build/lalie.webp') }}" alt="">
+                    <h3 class="text-warning m-0">Lalie</h3>
+                    <p class="text-primary bold">Présidente</p>
+                </div>
+                <div class="mt-4 member-team col-sm-6 col-md-4">
+                    <img class="rounded-circle shadow mx-auto" src="{{ asset('build/daniel.webp') }}" alt="">
+                    <h3 class="text-warning m-0">Daniel</h3>
+                    <p class="text-primary bold">Référent JdR</p>
+                </div>
+                <div class="mt-4 member-team col-sm-6 col-md-4">
+                    <img class="rounded-circle shadow mx-auto" src="{{ asset('build/vincent.webp') }}" alt="">
+                    <h3 class="m-0 text-warning">Vincent</h3>
+                    <p class="text-primary bold">Référent Mah-Jong</p>
+                </div>
+            {% endfor %}
+        </div>
+        <h2 class="mt-5 text-primary text-center">À propos</h2>
+        <p class="mt-4 text-primary">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid aperiam atque autem blanditiis culpa cum
+            dolores enim illum laudantium libero nulla odit quae quia rem sunt totam unde, veritatis vitae!
+            Amet architecto aspernatur blanditiis consectetur dolor dolorem dolores ducimus ea eius error fugit iure,
+            molestias necessitatibus obcaecati omnis optio perferendis quae quasi, quia quo saepe totam ut velit
+            voluptatem voluptates!
+            Aspernatur consequatur delectus deleniti ea enim incidunt ipsam maxime nemo nulla officia provident quam,
+            ratione, repellat temporibus vel. Accusantium aliquid assumenda beatae dignissimos dolorum quaerat sit
+            soluta unde. Molestias, ut.
+            Adipisci alias amet architecto aspernatur corporis culpa deserunt doloremque est exercitationem explicabo
+            id iure magni maiores nam, natus, necessitatibus nisi nostrum quod quos recusandae, sequi soluta tempora
+            temporibus tenetur velit?
+            Accusamus consequuntur cumque, debitis dignissimos dolore eaque eius expedita facilis inventore iure
+            placeat, praesentium quaerat, quis repellat sapiente similique tempore temporibus vel veniam vero. Id ipsa
+            neque quasi quisquam voluptatum?
+        </p>
+        <div class="m-5 d-flex justify-content-center">
+            <a class="btn btn-outline-secondary mr-2" href="">S'inscrire</a>
+            <a class="btn btn-outline-secondary ml-2" href="">Règlement</a>
+        </div>
+        <h2 class="mt-5 text-primary text-center ">Informations générales</h2>
+        <p class="mt-4 mb-5 text-primary">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid aperiam atque autem blanditiis culpa cum
+            dolores enim illum laudantium libero nulla odit quae quia rem sunt totam unde, veritatis vitae!
+            Amet architecto aspernatur blanditiis consectetur dolor dolorem dolores ducimus ea eius error fugit iure,
+            molestias necessitatibus obcaecati omnis optio perferendis quae quasi, quia quo saepe totam ut velit
+            voluptatem voluptates!
+            Aspernatur consequatur delectus deleniti ea enim incidunt ipsam maxime nemo nulla officia provident quam,
+            ratione, repellat temporibus vel. Accusantium aliquid assumenda beatae dignissimos dolorum quaerat sit
+            soluta unde. Molestias, ut.
+        </p>
+    </div>
+{% endblock %}
