@@ -5,18 +5,18 @@
     {% include 'home/_top-banner.html.twig' %}
 
     <div class="d-flex flex-wrap text-center container">
-        <div class="mb-5 p-lg-0 col-12 col-lg-6">
+        <div class="p-0 mb-5 p-lg-0 col-12 offset-lg-1 col-lg-6">
             <h2 class="mb-3 text-primary">Prochaines Activités</h2>
             {% include 'home/_sidebar_events.html.twig' %}
         </div>
 
-        <div class="p-lg-0 col-12 offset-lg-2 col-lg-4 d-flex flex-column justify-content-around">
-            <div>
-                <h2 class="d-none mb-3 text-primary-dark">main event</h2>
+        <div class="d-none p-lg-0 col-12 offset-lg-1 col-lg-4 d-flex flex-column justify-content-around row no-gutters">
+            <div class="d-none">
+                <h2 class="mb-3 text-primary-dark">main event</h2>
                 {#Todo: +ne pas afficher dans liste le mainEvent #}
             </div>
             <div>
-                <h2 class=" text-primary">Nous contacter</h2>
+                <h2 class="text-primary">Nous contacter</h2>
                 {% include 'home/_info-contact.html.twig' %}
             </div>
             <div class="mt-5">
