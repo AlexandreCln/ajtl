@@ -1,0 +1,85 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Agenda{% endblock %}
+
+{% block body %}
+    <div class="container text-primary-dark">
+        <h1 class="mt-5 text-primary">Agenda</h1>
+        <div class="m-5 d-flex justify-content-around">
+            <select class="w-auto text-primary">
+                <option selected>- Type d'activité -</option>
+                <option value="1">Jeux de Rôle</option>
+                <option value="2">Jeux de Plateau</option>
+                <option value="3">Projections Vidéo</option>
+            </select>
+            <a href="" class="w-auto btn btn-outline-secondary">Proposer une activité</a>
+        </div>
+        <div class="row">
+            {% for i in 1..5 %}
+                <div class="col-6 shadow">
+                    <div class="badge badge-info">Jeux de Rôle</div>
+                    <h2>Donjon & Dragon</h2>
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <i class="fas fa-calendar-day"></i> 18 Mai 2020 à 19:00
+                        </div>
+                        <div class="ml-4">
+                            <i class="fas fa-home"></i> Foyer des Seniors
+                        </div>
+                    </div>
+                    <div class="my-3 slots-players d-flex flex-wrap">
+                        <figure class="organizer">
+                            <a class="player rounded-circle shadow" href="">
+                                <img title="Lalie" src="{{ asset('build/lalie.webp') }}" alt="">
+                            </a>
+                            <img class="crown" src="{{ asset('build/crown.svg') }}">
+                        </figure>
+                        <figure class="">
+                            <a href="" class="player rounded-circle shadow">
+                                <img title="Yoan" src="{{ asset('build/yoan.webp') }}" alt="">
+                            </a>
+
+                        </figure>
+                        <figure class="key-owner">
+                            <a href="" class="player rounded-circle shadow">
+                                <img title="Vincent" src="{{ asset('build/vincent.webp') }}" alt="">
+                            </a>
+                            <img class="key" src="{{ asset('build/key.svg') }}">
+                        </figure>
+                        <img class="vacancy rounded-circle shadow" title="Place disponible"
+                             src="{{ asset('build/placeholder-user.png') }}" alt="Place disponible">
+                        <img class="vacancy rounded-circle shadow" title="Place disponible"
+                             src="{{ asset('build/placeholder-user.png') }}" alt="Place disponible">
+                        <img class="vacancy rounded-circle shadow" title="Place disponible"
+                             src="{{ asset('build/placeholder-user.png') }}" alt="Place disponible">
+                    </div>
+                    <div>
+                        <i class="fas fa-key"></i>
+                        <a href="">Lalie / Vous indiqué avoir la clé</a>
+                        <a href="" class="text-danger">Annuler</a>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus dolore dolorem eius eos est
+                        harum
+                        impedit iste nihil nostrum nulla numquam odio, quisquam repellat repudiandae saepe sequi sint
+                        tenetur
+                        voluptas.Asperiores at doloribus ducimus eius eum exercitationem harum modi mollitia.
+                    </p>
+                    <div class="my-4">
+                        {# Todo: Mettre un lien 'Annuler' dans le message flash#}
+                        <a href="" class="m-2 btn btn-outline-secondary">Je m'inscrit !</a>
+                        <a href="" class="m-2 btn btn-outline-secondary">Discussion Forum</a>
+                    </div>
+                    <div class="alert-warning p-1 text-center rounded">
+                        <i class="fas fa-exclamation-circle"></i> Cette activité n'a pas encore de clé
+                        <a href="" class="m-1 border-0 rounded"><u>Indiquer que vous l'avez</u></a>
+                    </div>
+                    <div class="alert-success p-1 text-center rounded">
+                        <i class="fas fa-exclamation-circle"></i> Vous avec indiqué que vous avez la clé
+                        <a href="" class="m-1 border-0 rounded"><u>Annuler</u></a>
+                    </div>
+
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
