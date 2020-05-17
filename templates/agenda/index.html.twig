@@ -14,20 +14,23 @@
             </select>
             <a href="" class="w-auto btn btn-outline-secondary">Proposer une activité</a>
         </div>
-        <div class="row">
+        <div class="d-flex justify-content-around flex-wrap">
             {% for i in 1..5 %}
-                <div class="col-6 shadow">
+                <div class="m-4 event">
                     <div class="badge badge-info">Jeux de Rôle</div>
                     <h2>Donjon & Dragon</h2>
-                    <div class="d-flex justify-content-between">
+
+                    <div class="d-flex justify-content-between text-center">
                         <div>
                             <i class="fas fa-calendar-day"></i> 18 Mai 2020 à 19:00
                         </div>
                         <div class="ml-4">
+{#                            Todo: lien vers plan#}
                             <i class="fas fa-home"></i> Foyer des Seniors
                         </div>
                     </div>
-                    <div class="my-3 slots-players d-flex flex-wrap">
+
+                    <div class="mt-3 mx-auto slots-players justify-content-center d-flex flex-wrap">
                         <figure class="organizer">
                             <a class="player rounded-circle shadow" href="">
                                 <img title="Lalie" src="{{ asset('build/lalie.webp') }}" alt="">
@@ -53,31 +56,28 @@
                         <img class="vacancy rounded-circle shadow" title="Place disponible"
                              src="{{ asset('build/placeholder-user.png') }}" alt="Place disponible">
                     </div>
-                    <div>
-                        <i class="fas fa-key"></i>
-                        <a href="">Lalie / Vous indiqué avoir la clé</a>
-                        <a href="" class="text-danger">Annuler</a>
-                    </div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus dolore dolorem eius eos est
+
+                    <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus dolore dolorem eius eos est
                         harum
                         impedit iste nihil nostrum nulla numquam odio, quisquam repellat repudiandae saepe sequi sint
                         tenetur
                         voluptas.Asperiores at doloribus ducimus eius eum exercitationem harum modi mollitia.
                     </p>
-                    <div class="my-4">
+
+                    <div class="my-2 d-flex justify-content-around text-nowrap">
                         {# Todo: Mettre un lien 'Annuler' dans le message flash#}
-                        <a href="" class="m-2 btn btn-outline-secondary">Je m'inscrit !</a>
-                        <a href="" class="m-2 btn btn-outline-secondary">Discussion Forum</a>
+                        <a href="" class="mx-1 btn btn-outline-secondary">Je m'inscrit !</a>
+                        <a href="" class="mx-1 btn btn-outline-secondary">Discussion Forum</a>
                     </div>
-                    <div class="alert-warning p-1 text-center rounded">
+
+                    <div class="my-3 alert-warning p-1 text-center rounded">
                         <i class="fas fa-exclamation-circle"></i> Cette activité n'a pas encore de clé
                         <a href="" class="m-1 border-0 rounded"><u>Indiquer que vous l'avez</u></a>
                     </div>
-                    <div class="alert-success p-1 text-center rounded">
+                    <div class="my-3 alert-success p-1 text-center rounded">
                         <i class="fas fa-exclamation-circle"></i> Vous avec indiqué que vous avez la clé
                         <a href="" class="m-1 border-0 rounded"><u>Annuler</u></a>
                     </div>
-
                 </div>
             {% endfor %}
         </div>
