@@ -4,29 +4,25 @@
 
     {% include 'home/_top-banner.html.twig' %}
 
-    <div class="d-flex flex-wrap text-center container">
-        <div class="p-0 mb-5 p-lg-0 col-12 offset-lg-1 col-lg-6">
-            <h2 class="mb-3 text-primary">Prochaines Activités</h2>
+    <div class="p-0 container d-flex justify-content-center flex-wrap text-center">
+        <div class="mb-5 col-12 col-lg-5 d-flex flex-column justify-content-between">
+            <h2 class="mb-3 text-primary">Prochaines activités</h2>
             {% include 'home/_sidebar_events.html.twig' %}
         </div>
 
-        <div class="d-none p-lg-0 col-12 offset-lg-1 col-lg-4 d-flex flex-column justify-content-around row no-gutters">
-            <div class="d-none">
-                <h2 class="mb-3 text-primary-dark">main event</h2>
-                {#Todo: +ne pas afficher dans liste le mainEvent #}
-            </div>
-            <div>
-                <h2 class="text-primary">Nous contacter</h2>
+        <div class="col-12 offset-lg-2 col-lg-4 d-flex flex-column justify-content-between row">
+            <div class="my-auto">
+                <h2 class="mb-3 text-primary">Nous contacter</h2>
                 {% include 'home/_info-contact.html.twig' %}
             </div>
-            <div class="mt-5">
-                <h2 class=" text-primary">Reçoit les newsletters</h2>
+            <div class="my-5 p-3 text-light bg-primary rounded shadow">
+                <h2>Newsletters des activités</h2>
                 {{ render(path('newsletter_render')) }}
             </div>
         </div>
     </div>
 
-    <h2 class="mb-3 text-primary text-center mt-5">Où nous trouver ?</h2>
+    <h2 class="mb-3 text-primary text-center">Où nous trouver ?</h2>
     {% include 'home/_access-info.html.twig' %}
 
     <h2 class="mb-3 mb-4 text-primary-dark text-center mt-5">Nos partenaires</h2>

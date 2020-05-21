@@ -1,7 +1,5 @@
-{% set nbMax = 5 %}
-
-{% for i in 1..nbMax %}
-    <div class="card text-primary-dark text-nowrap mt-4 shadow">
+{% for i in 1..4 %}
+    <div class="card text-primary-dark text-nowrap mt-3 shadow">
         <div class="card-header p-1">
             <div class="event-info-header d-flex justify-content-between">
                 <p class="m-0 ml-2 badge text-light badge-{{ i % 2 == 0 ? 'warning':'success' }}">
@@ -24,10 +22,12 @@
             </div>
             <a href="" class="btn btn-outline-secondary m-3">Je m'inscris !</a>
         </div>
-        <div class="see-more card-footer btn text-center text-light bg-primary" data-toggle="collapse"
+        <div class="p-2 see-more card-footer btn text-center text-light bg-primary" data-toggle="collapse"
              data-target="#body-event{{ loop.index }}">
             Voir
         </div>
     </div>
 {% endfor %}
+
+<a href="{{ path('agenda') }}" class="mt-3 btn btn-outline-primary">Voir toutes les activités</a>
 
