@@ -3,6 +3,7 @@
     font-size: 36px;
   }
   .referent-pic {
+    object-fit: cover;
     height: 150px;
     width: 150px;
   }
@@ -14,6 +15,6 @@
 .activity-image {
   object-fit: cover;
   min-height: 200px;
-  max-height: 400px;
+  max-height: 380px;
   width: 100%;
 }

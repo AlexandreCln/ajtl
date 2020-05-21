@@ -16,18 +16,16 @@
                 Tout système de gouvernement contraires à cette méthode, la méthode des conférences populaires, est
                 antidémocratique.
             </p>
-            <div class="info-body-event d-flex justify-content-between">
+            <div class="mb-3 info-body-event d-flex justify-content-between">
                 <p class="m-0 ml-3"><i class="fas fa-home"></i> Foyer des Seniors</p>
                 <p class="m-0 mr-3"><i class="fas fa-users"></i> 4 place(s) restantes</p>
             </div>
-            <a href="" class="btn btn-outline-secondary m-3">Je m'inscris !</a>
         </div>
-        <div class="p-2 see-more card-footer btn text-center text-light bg-primary" data-toggle="collapse"
+        <div class="p-2 see-more card-footer btn text-center bg-primary text-light" data-toggle="collapse"
              data-target="#body-event{{ loop.index }}">
             Voir
         </div>
     </div>
 {% endfor %}
 
-<a href="{{ path('agenda') }}" class="mt-3 btn btn-outline-primary">Voir toutes les activités</a>
-
+<a href="{{ path('agenda') }}" class="mt-3 btn btn-secondary text-light shadow">Voir toutes les activités</a>

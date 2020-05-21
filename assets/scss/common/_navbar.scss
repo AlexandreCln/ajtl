@@ -19,9 +19,9 @@ $hamburger-layer-width: 33px !default;
 .navbar-toggler {
   border: none;
   outline: 0;
-  background-color: $secondary;
+  background-color: $primary-dark;
 }
 
 .dropdown-item:hover {
-  background-color: lighten($secondary, 8%);
+  background-color: lighten($primary-dark, 3%);
 }

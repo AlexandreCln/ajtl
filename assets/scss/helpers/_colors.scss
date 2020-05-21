@@ -1,15 +1,18 @@
-$primary: #2E6095;
-$primary-dark: #1D366D;
-$secondary: #B14145;
-$lighter: #F8F1E0;
+$primary: #8db8c1;
+$primary-dark: #034C5F;
+//$secondary: #eebaae;
+$secondary: darken(#F9C4BA, 6%);
+$secondary-dark: #ee6457;
+$lighter: #fcf1f0;
 
-// Activities' Colors
-$roleplay: #9e4c4c;
+// Usable pallet
+$usable1: #9e4c4c;
 
 // Overwrite Bootstrap theme
 $theme-colors: (
     "primary": $primary,
     "primary-dark": $primary-dark,
     "secondary": $secondary,
+    "secondary-dark": $secondary-dark,
     "lighter": $lighter,
 );

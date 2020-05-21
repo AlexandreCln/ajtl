@@ -3,31 +3,31 @@
 {% block title %}Todo: nom activité{% endblock %}
 
 {% block body %}
-    <div class="container">
-        <h1 class="text-primary mt-5">Jeux de Rôle & Grandeur Nature</h1>
-    </div>
-    <img class="activity-image" src="{{ asset('build/taverne.jpeg') }}" alt="">
-    <div class="container text-center">
-        <div class="activities d-flex justify-content-around align-items-center flex-wrap text-center text-primary-dark mb-5">
-            <div class="m-4">
-                <p class="text-secondary bold">Jours & Horaires:</p>
+    <div class="container text-primary-dark text-center">
+        <h1 class="mt-5 float-left">Jeux de Rôle</h1>
+        <img class="activity-image rounded shadow" src="{{ asset('build/taverne.jpeg') }}" alt="">
+        <div class="activities d-flex justify-content-around flex-wrap text-center text-primary-dark mt-3 mb-3">
+            <div class="m-4 my-auto">
+                <p class="bold">Jours & Horaires:</p>
                 <p>Jeudis à 19h30 <br>
                     Dimanches à 19h</p>
+                <div class="m-4">
+                    <p><span class="bold">Lieux: </span><br>
+                        <a class="text-primary-dark" href="{{ path('home') ~ '#location' }}">Foyer des Seniors <i class="fas fa-search ml-2 text-secondary"></i></a>
+                    </p>
+                </div>
             </div>
+
             <div class="m-4">
-                <p><span class="text-secondary bold">Lieux: </span><br>
-                    <a href="">Foyer des Seniors <i class="fas fa-sm fa-search-plus ml-2"></i></a>
-                </p>
-            </div>
-            <div class="m-4">
+                <p class="bold">Référent: </p>
                 <img class="referent-pic rounded-circle shadow" src="{{ asset('build/yoan.webp') }}" alt="">
-                <p class="m-0"><span class="text-secondary bold">Référent: </span>Yoann</p>
+                <p class="m-0">Yoann</p>
                 <p>06 00 00 00 00</p>
             </div>
         </div>
         <div class="mb-5">
-            <h2 class="text-primary">À propos</h2>
-            <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquam, animi
+            <h2>À propos</h2>
+            <p class="mt-4 mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquam, animi
                 asperiores deleniti natus non
                 temporibus voluptas? Alias dolore minus molestiae neque nisi porro provident quae quo sed, sequi
                 voluptatem.
@@ -38,7 +38,7 @@
             </p>
         </div>
 
-        <h2 class="text-primary">Prochaines activités</h2>
+        <h2>Prochaines activités</h2>
         <div class="row mb-5 text-center">
             {% for i in 0..3 %}
                 <div class="col col-md-6">
@@ -65,7 +65,7 @@
                                 <p class="m-0 ml-3"><i class="fas fa-home"></i> Foyer des Seniors</p>
                                 <p class="m-0 mr-3"><i class="fas fa-users"></i> 4 place(s) restantes</p>
                             </div>
-                            <a href="" class="btn btn-outline-secondary m-3">Je m'inscris !</a>
+                            <a href="" class="btn btn-secondary m-3">Je m'inscris !</a>
                         </div>
                         <div class="see-more card-footer btn text-center text-light bg-primary" data-toggle="collapse"
                              data-target="#body-event{{ loop.index }}">

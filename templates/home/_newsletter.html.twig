@@ -1,4 +1,4 @@
-<div class="d-flex flex-column align-items-center">
+<div class="d-flex flex-column align-items-center text-primary-dark">
     {{ form_start(newsletterForm) }}
 
     <div class="text-left m-1 my-3">
@@ -8,7 +8,7 @@
     </div>
     <div class="d-flex justify-content-between flex-wrap">
         {{ form_widget(newsletterForm.email, { 'attr': {'class': 'm-1 w-auto border-primary'} }) }}
-        {{ form_widget(newsletterForm.submit, { 'attr': {'class': 'm-1 mx-auto btn-outline-light'} }) }}
+        {{ form_widget(newsletterForm.submit, { 'attr': {'class': 'm-1 mx-auto border-light text-light btn-secondary'} }) }}
         {{ form_errors(newsletterForm) }}
     </div>
 

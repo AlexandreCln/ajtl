@@ -1,0 +1,27 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}S'inscrire{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1 class="mt-5 text-primary">Adhésion au club</h1>
+        <img class="activity-image rounded" src="{{ asset('build/taverne.jpeg') }}" alt="">
+    </div>
+    <div class="container text-primary-dark">
+        <div class="d-flex flex-wrap">
+            <a href="" target="_blank" class="my-3 mr-3 btn btn-secondary"><i class="mr-2 fas fa-file-invoice"></i> Inscription</a>
+            <a href="" target="_blank" class="my-3 btn btn-secondary"><i class="mr-2 fas fa-book"></i> Règlement intérieur</a>
+        </div>
+        <p>Télécharger le document d'inscription. <br>
+            Les documents ainsi que le paiement pour l'adhésion au club se fait en main propre.
+        </p>
+        <div class="my-5">
+            <h2 class="text-primary">Tarifs</h2>
+{# Todo: variables price (saison, demi saison ...)#}
+            <p><u>Pour la saison :</u> 15 € (hors licence FédéGN et FFMJ si participation aux tournois)</p>
+            <p><u>Pour la demi-saison (à partir de mars) :</u> 7 €</p>
+            <p><u>Pour les autres membres d'une même famille :</u> 7 €</p>
+            <p><u>Pour un membre d'une association <a class="text-secondary" href="{{ path('home') ~ '#partners' }}">partenaire</a> :</u> 7 €</p>
+        </div>
+    </div>
+{% endblock %}

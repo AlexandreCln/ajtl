@@ -1,3 +1,8 @@
+@import "colors";
+
+body {
+  background-color: $lighter;
+}
 a:focus, img:focus, input:focus {
   outline: 0;
 }
@@ -13,5 +18,5 @@ li {
   list-style-type: none;
 }
 .bold {
-  font-weight: 400;
+  font-weight: bold;
 }

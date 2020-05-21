@@ -6,13 +6,13 @@
 
     <div class="p-0 container d-flex justify-content-center flex-wrap text-center">
         <div class="mb-5 col-12 col-lg-5 d-flex flex-column justify-content-between">
-            <h2 class="mb-3 text-primary">Prochaines activités</h2>
+            <h2 class="mb-3 text-primary-dark">Prochaines activités</h2>
             {% include 'home/_sidebar_events.html.twig' %}
         </div>
 
         <div class="col-12 offset-lg-2 col-lg-4 d-flex flex-column justify-content-between row">
-            <div class="my-auto">
-                <h2 class="mb-3 text-primary">Nous contacter</h2>
+            <div class="my-auto bg-primary rounded shadow">
+                <h2 class="mb-3 text-light">Nous contacter</h2>
                 {% include 'home/_info-contact.html.twig' %}
             </div>
             <div class="my-5 p-3 text-light bg-primary rounded shadow">
@@ -22,10 +22,10 @@
         </div>
     </div>
 
-    <h2 class="mb-3 text-primary text-center">Où nous trouver ?</h2>
+    <h2 id="location" class="mb-3 text-primary-dark text-center">Où nous trouver ?</h2>
     {% include 'home/_access-info.html.twig' %}
 
-    <h2 class="mb-3 mb-4 text-primary-dark text-center mt-5">Nos partenaires</h2>
+    <h2 id="partners" class="mb-3 mb-4 text-primary-dark text-center mt-5">Nos partenaires</h2>
     {% include 'home/_partners.html.twig' %}
     <img class="mb-5 logo-olivet mx-auto" src="{{ asset('build/logo-olivet.png') }}" alt="logo olivet">
 

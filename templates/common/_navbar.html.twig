@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md navbar-dark bg-secondary p-1 p-md-3">
+<nav class="navbar navbar-expand-md navbar-dark bg-primary-dark p-1 p-md-3">
     <button class="navbar-toggler ml-auto hamburger hamburger--spin" type="button" data-toggle="collapse"
             data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -20,7 +20,7 @@
                    role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     NOS ACTIVITÉS
                 </a>
-                <div class="dropdown-menu bg-secondary border-0" aria-labelledby="navbarDropdown">
+                <div class="dropdown-menu bg-primary-dark border-0" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item text-light text-center" href="{{ path('activities') }}">JEUX DE RÔLE</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item text-light text-center" href="#">JEUX DE PLATEAUX</a>
@@ -36,10 +36,10 @@
                    role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     NOUS REJOINDRE
                 </a>
-                <div class="dropdown-menu bg-secondary border-0" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item text-light text-center" href="#">INSCRIPTION</a>
+                <div class="dropdown-menu bg-primary-dark border-0" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item text-light text-center" href="{{ path('membership') }}">ADHÉSION</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item text-light text-center" href="#">PLAN D'ACCÈS</a>
+                    <a class="dropdown-item text-light text-center" href="{{ path('home') ~ '#location' }}">PLAN D'ACCÈS</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item text-light text-center" href="#">CONTACT</a>
                 </div>
