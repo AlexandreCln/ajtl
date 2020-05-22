@@ -3,29 +3,29 @@
 {% block title %}Hello PresentationController!{% endblock %}
 
 {% block body %}
-    <div class="container">
-        <h1 class="mt-5 text-primary">L'association</h1>
+    <div class="container text-primary-dark">
+        <h1 class="mt-5">L'association</h1>
         <div class="mb-5 row text-center">
             {% for i in 0..1 %}
                 <div class="mt-4 member-team col-sm-6 col-md-4">
                     <img class="rounded-circle shadow mx-auto" src="{{ asset('build/lalie.webp') }}" alt="">
-                    <h3 class="text-warning m-0">Lalie</h3>
+                    <h3 class="text-secondary m-0">Lalie</h3>
                     <p class="text-primary bold">Présidente</p>
                 </div>
                 <div class="mt-4 member-team col-sm-6 col-md-4">
                     <img class="rounded-circle shadow mx-auto" src="{{ asset('build/daniel.webp') }}" alt="">
-                    <h3 class="text-warning m-0">Daniel</h3>
+                    <h3 class="text-secondary m-0">Daniel</h3>
                     <p class="text-primary bold">Référent JdR</p>
                 </div>
                 <div class="mt-4 member-team col-sm-6 col-md-4">
                     <img class="rounded-circle shadow mx-auto" src="{{ asset('build/vincent.webp') }}" alt="">
-                    <h3 class="m-0 text-warning">Vincent</h3>
+                    <h3 class="m-0 text-secondary">Vincent</h3>
                     <p class="text-primary bold">Référent Mah-Jong</p>
                 </div>
             {% endfor %}
         </div>
-        <h2 class="mt-5 text-primary text-center">À propos</h2>
-        <p class="mt-4 text-primary text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid aperiam atque autem blanditiis culpa cum
+        <h2 class="mt-5 text-center">À propos</h2>
+        <p class="mt-4 text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid aperiam atque autem blanditiis culpa cum
             dolores enim illum laudantium libero nulla odit quae quia rem sunt totam unde, veritatis vitae!
             Amet architecto aspernatur blanditiis consectetur dolor dolorem dolores ducimus ea eius error fugit iure,
             molestias necessitatibus obcaecati omnis optio perferendis quae quasi, quia quo saepe totam ut velit
@@ -40,11 +40,13 @@
             placeat, praesentium quaerat, quis repellat sapiente similique tempore temporibus vel veniam vero. Id ipsa
             neque quasi quisquam voluptatum?
         </p>
-        <div class="m-5 d-flex justify-content-center">
-            <a class="btn btn-secondary mr-2" href="{{ path('membership') }}">Nous rejoindre</a>
+        <div class="d-flex justify-content-center">
+            <a class="m-2 btn btn-secondary" href="{{ path('membership') }}">
+                <i class="mr-1 fas fa-sign-in-alt"></i> Nous rejoindre
+            </a>
         </div>
-        <h2 class="mt-5 text-primary text-center">Informations générales</h2>
-        <p class="mt-4 mb-5 text-primary text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid aperiam atque autem blanditiis culpa cum
+        <h2 class="mt-5 text-center">Informations générales</h2>
+        <p class="mt-4 mb-5 text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid aperiam atque autem blanditiis culpa cum
             dolores enim illum laudantium libero nulla odit quae quia rem sunt totam unde, veritatis vitae!
             Amet architecto aspernatur blanditiis consectetur dolor dolorem dolores ducimus ea eius error fugit iure,
             molestias necessitatibus obcaecati omnis optio perferendis quae quasi, quia quo saepe totam ut velit
