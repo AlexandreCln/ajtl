@@ -1,17 +1,21 @@
 $primary: #8db8c1;
 $primary-dark: #034C5F;
 $secondary: darken(#F9C4BA, 4%);
-$secondary-dark: #ee6457;
-$lighter: #fcf1f0;
+$background: #fcf1f0;
 
-// Usable pallet
+//  Theme 2
+$primary: #97c1df;
+$primary-dark: #2d6790;
+$secondary: #f5ccd1;
+$background: #fdf9fa;
+
+//  Usable pallet
 $usable1: #9e4c4c;
 
-// Overwrite Bootstrap theme
+//  Bootstrap theme overwrite
 $theme-colors: (
     "primary": $primary,
     "primary-dark": $primary-dark,
     "secondary": $secondary,
-    "secondary-dark": $secondary-dark,
-    "lighter": $lighter,
+    "background": $background,
 );

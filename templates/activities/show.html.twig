@@ -19,16 +19,16 @@
                     <h2><span class="bold">Lieux: </span></h2>
                     <p class="m-0">
                         <a class="text-primary-dark" href="{{ path('home') ~ '#location' }}">
-                            Foyer des Seniors <i class="fas fa-search ml-2 text-secondary"></i>
+                            Foyer des Seniors <i class="fas fa-search ml-2 text-primary"></i>
                         </a>
                     </p>
                 </div>
             </div>
 
-            <div class="p-3 m-4 bg-primary shadow rounded">
-                <h2 class="mb-3 bold text-light">Référent: </h2>
-                <img class="mx-auto referent-pic rounded-circle shadow" src="{{ asset('build/yoan.webp') }}" alt="">
-                <p class="m-0">Yoann</p>
+            <div class="p-3 m-4 bg-primary-dark text-light shadow rounded">
+                <h2 class="mb-3 bold">Référent: </h2>
+                <img class="mx-auto referent-pic rounded-circle shadow" src="{{ asset('build/daniel.webp') }}" alt="">
+                <p class="m-0">Daniel</p>
                 <p class="m-0"><i class="mr-1 fas fa-phone-alt"></i> 06 00 00 00 00</p>
             </div>
         </div>
@@ -46,42 +46,33 @@
         </div>
 
         <h2 class="pt-3">Prochaines activités</h2>
+
+        <a href="{{ path('agenda') }}" class="mt-4 mb-3 btn btn-secondary text-primary-dark shadow">Voir toutes les
+            activités</a>
+
         <div class="row text-center">
+
             {% for i in 0..3 %}
-                <div class="col col-lg-6">
-                    <div class="card text-primary-dark text-nowrap mt-4 shadow">
-                        <div class="card-header p-1">
-                            <div class="event-info-header d-flex justify-content-between">
-                                <p class="m-0 ml-2 badge text-light badge-{{ i % 2 == 0 ? 'warning':'success' }}">
-                                    {{ i % 2 == 0 ? 'Jeux de Plateau':'Mah-Jong' }}
+                <div class="col-12 col-lg-6">
+                    <div class="p-1 mt-3 card text-primary-dark shadow">
+                        <div>
+                            <div class="event-info d-flex justify-content-between text-nowrap">
+                                <p class="m-0 ml-2 badge badge-danger text-light">
+                                    Jeux de Rôle
                                 </p>
                                 <p class="m-0 mr-2">8 Mai 2020 à 18:00</p>
                             </div>
-                            <p class="bold m-0">Donjon & Dragon : Vous allez mourrir !</p>
+                            <p class="bold m-2">Donjon & Dragon</p>
                         </div>
-                        <div id="body-event{{ loop.index }}" class="collapse">
-                            <p class="m-3 event-short-desc text-wrap">Il est pas une activité improductive, ni celui qui
-                                cherche profit
-                                pour une épargne excédentaire au-delà de la satisfaction de ces besoins
-                                Chaque conférence populaire de base choisit son secrétariat
-                                Tout système de gouvernement contraires à cette méthode, la méthode des conférences
-                                populaires, est
-                                antidémocratique.
-                            </p>
-                            <div class="info-body-event d-flex justify-content-between">
-                                <p class="m-0 ml-3"><i class="fas fa-home"></i> Foyer des Seniors</p>
-                                <p class="m-0 mr-3"><i class="fas fa-users"></i> 4 place(s) restantes</p>
-                            </div>
-                            <a href="" class="btn btn-secondary m-3">Je m'inscris !</a>
-                        </div>
-                        <div class="see-more card-footer btn text-center text-light bg-primary" data-toggle="collapse"
-                             data-target="#body-event{{ loop.index }}">
-                            Voir
+                        <div class="event-info d-flex justify-content-between">
+                            <p class="m-0 ml-3"><i class="fas fa-home"></i> Foyer des Seniors</p>
+                            <p class="m-0 mr-3"><i
+                                        class="fas fa-users"></i> {{ i % 2 == 0 ? '4 places restantes':'Complet' }}</p>
+                            {#        Todo: place et placeS #}
                         </div>
                     </div>
                 </div>
             {% endfor %}
         </div>
-        <a href="{{ path('agenda') }}" class="mt-4 btn btn-secondary text-light shadow">Voir toutes les activités</a>
     </div>
 {% endblock %}

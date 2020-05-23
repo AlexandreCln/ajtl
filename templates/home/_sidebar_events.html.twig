@@ -1,31 +1,21 @@
-{% for i in 1..4 %}
-    <div class="card text-primary-dark text-nowrap mt-3 shadow">
-        <div class="card-header p-1">
-            <div class="event-info-header d-flex justify-content-between">
-                <p class="m-0 ml-2 badge text-light badge-{{ i % 2 == 0 ? 'warning':'success' }}">
+
+<a href="{{ path('agenda') }}" class="mt-3 btn btn-secondary text-primary-dark shadow">Toutes les activités</a>
+
+{% for i in 1..5 %}
+    <div class="p-1 mt-3 card text-primary-dark shadow">
+        <div>
+            <div class="event-info d-flex justify-content-between text-nowrap">
+                <p class="m-0 ml-2 badge badge-{{ i % 2 == 0 ? 'danger':'warning' }} text-light">
                     {{ i % 2 == 0 ? 'Jeux de Rôle':'Jeux de Plateau' }}
                 </p>
                 <p class="m-0 mr-2">8 Mai 2020 à 18:00</p>
             </div>
-            <p class="bold m-0">{{ i % 2 == 0 ? 'Donjon & Dragon : Vous allez mourrir !':'Mah-Jong' }}</p>
+            <p class="bold m-2">{{ i % 2 == 0 ? 'Donjon & Dragon':'Mah-Jong' }}</p>
         </div>
-        <div id="body-event{{ loop.index }}" class="collapse">
-            <p class="m-3 event-short-desc text-wrap">Il est pas une activité improductive, ni celui qui cherche profit
-                pour une épargne excédentaire au-delà de la satisfaction de ces besoins
-                Chaque conférence populaire de base choisit son secrétariat
-                Tout système de gouvernement contraires à cette méthode, la méthode des conférences populaires, est
-                antidémocratique.
-            </p>
-            <div class="mb-3 info-body-event d-flex justify-content-between">
-                <p class="m-0 ml-3"><i class="fas fa-home"></i> Foyer des Seniors</p>
-                <p class="m-0 mr-3"><i class="fas fa-users"></i> 4 place(s) restantes</p>
-            </div>
-        </div>
-        <div class="p-2 see-more card-footer btn text-center bg-primary text-light" data-toggle="collapse"
-             data-target="#body-event{{ loop.index }}">
-            Voir
+        <div class="event-info d-flex justify-content-between">
+            <p class="m-0 ml-3"><i class="fas fa-home"></i> Foyer des Seniors</p>
+            <p class="m-0 mr-3"><i class="fas fa-users"></i> {{ i % 2 == 0 ? '4 places restantes':'Complet' }}</p>
+            {#        Todo: place et placeS #}
         </div>
     </div>
 {% endfor %}
-
-<a href="{{ path('agenda') }}" class="mt-3 btn btn-secondary text-light shadow">Voir toutes les activités</a>

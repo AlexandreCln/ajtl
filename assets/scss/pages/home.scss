@@ -4,24 +4,8 @@
 }
 
 // Sidebar events
-.event-info-header p,
-.info-body-event p {
+.event-info p {
   font-size: 15px;
-}
-
-.see-more:after {
-  //font-family: "Font Awesome 5 Free";
-  //font-weight: 900;
-  //content: '\f078';
-  content: '+';
-}
-
-.see-more.collapsed:after {
-  //font-family: "Font Awesome 5 Free";
-  //font-weight: 900;
-  //content: '\f077';
-  content: '-';
-
 }
 
 // Home infos
@@ -49,6 +33,6 @@
   }
   .partner-infos p{
     margin:0;
-    font-size: 17px;
+    font-size: 16px;
   }
 }
