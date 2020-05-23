@@ -1,0 +1,55 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-primary-dark p-1 p-md-3">
+    <button class="navbar-toggler ml-auto hamburger hamburger--spin" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+        <ul class="navbar-nav align-items-center">
+            <li class="nav-item text-light">
+                <a class="nav-link text-light" href="{{ path('home') }}">ACCUEIL</a>
+            </li>
+            <li class="nav-item text-light">
+                <a class="nav-link text-light" href="{{ path('agenda') }}">AGENDA</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link text-light dropdown-toggle text-nowrap text-center" href="#" id="navbarDropdown"
+                   role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    NOS ACTIVITÉS
+                </a>
+                <div class="dropdown-menu bg-primary-dark border-0" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item text-light text-center" href="{{ path('activities') }}">JEUX DE RÔLE</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item text-light text-center" href="#">JEUX DE PLATEAUX</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item text-light text-center" href="#">PROJECTIONS VIDÉO</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-light" href="{{ path('presentation') }}">PRÉSENTATION</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link text-light dropdown-toggle text-nowrap text-center" href="#" id="navbarDropdown"
+                   role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    NOUS REJOINDRE
+                </a>
+                <div class="dropdown-menu bg-primary-dark border-0" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item text-light text-center" href="{{ path('membership') }}">ADHÉSION</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item text-light text-center" href="{{ path('home') ~ '#location' }}">PLAN D'ACCÈS</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item text-light text-center" href="#">CONTACT</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-light" href="{{ path('gallery') }}">GALERIE</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-light" href="#">FORUM</a>
+            </li>
+        </ul>
+    </div>
+</nav>

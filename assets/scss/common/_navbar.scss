@@ -1,0 +1,27 @@
+@import "../helpers/colors";
+$hamburger-layer-color: #ffffff !default;
+$hamburger-padding-y: 10px !default;
+$hamburger-padding-x: 13px !default;
+$hamburger-layer-width: 33px !default;
+
+.nav-item {
+  font-weight: 400;
+  margin: 0 6px 0 6px;
+}
+
+.logo-ajtl {
+  height: 6rem;
+  border-radius: 50%;
+}
+.navbar-toggler:hover,
+.navbar-toggler:active,
+.navbar-toggler:focus,
+.navbar-toggler {
+  border: none;
+  outline: 0;
+  background-color: $primary-dark;
+}
+
+.dropdown-item:hover {
+  background-color: lighten($primary-dark, 3%);
+}

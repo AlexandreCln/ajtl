@@ -1,0 +1,54 @@
+// Top banner
+.main-heading {
+  font-size: 36px;
+}
+
+// Sidebar events
+.event-info-header p,
+.info-body-event p {
+  font-size: 15px;
+}
+
+.see-more:after {
+  //font-family: "Font Awesome 5 Free";
+  //font-weight: 900;
+  //content: '\f078';
+  content: '+';
+}
+
+.see-more.collapsed:after {
+  //font-family: "Font Awesome 5 Free";
+  //font-weight: 900;
+  //content: '\f077';
+  content: '-';
+
+}
+
+// Home infos
+.home-info-contact {
+  p, a {
+    font-size: 20px;
+  }
+  i.fa-envelope {
+    font-size: 23px;
+  }
+  i.fa-phone {
+    font-size: 20px;
+  }
+}
+
+// Partners
+.logo-olivet {
+  height: 5rem;
+}
+.partners {
+  img {
+    height: 130px;
+    width: 190px;
+    object-fit: contain;
+  }
+  .partner-infos p{
+    margin:0;
+    font-size: 17px;
+  }
+}

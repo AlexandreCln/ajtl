@@ -1,0 +1,87 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Todo: nom activité{% endblock %}
+
+{% block body %}
+    <div class="mb-5 container text-primary-dark text-center">
+        <h1 class="mt-5 mb-0 text-center text-lg-left">Jeux de Rôle</h1>
+        <hr class="mt-2 mb-5">
+        <img class="activity-image rounded shadow" src="{{ asset('build/taverne.jpeg') }}" alt="">
+        <div class="my-4 activities d-flex justify-content-around flex-wrap text-center text-primary-dark">
+            <div class="m-4 d-flex flex-column justify-content-between">
+                <div>
+                    <h2 class="bold">Jours & Horaires:</h2>
+                    <p>Jeudis à 19h30 <br>
+                        Dimanches à 19h</p>
+                </div>
+
+                <div>
+                    <h2><span class="bold">Lieux: </span></h2>
+                    <p class="m-0">
+                        <a class="text-primary-dark" href="{{ path('home') ~ '#location' }}">
+                            Foyer des Seniors <i class="fas fa-search ml-2 text-secondary"></i>
+                        </a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="p-3 m-4 bg-primary shadow rounded">
+                <h2 class="mb-3 bold text-light">Référent: </h2>
+                <img class="mx-auto referent-pic rounded-circle shadow" src="{{ asset('build/yoan.webp') }}" alt="">
+                <p class="m-0">Yoann</p>
+                <p class="m-0"><i class="mr-1 fas fa-phone-alt"></i> 06 00 00 00 00</p>
+            </div>
+        </div>
+        <div class="mb-5">
+            <h2 class="mt-5">À propos</h2>
+            <p class="mt-4 mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquam, animi
+                asperiores deleniti natus non
+                temporibus voluptas? Alias dolore minus molestiae neque nisi porro provident quae quo sed, sequi
+                voluptatem.
+                A alias aut facilis fugiat ipsa maiores neque odio placeat! Commodi dicta dignissimos doloremque fugit
+                illo
+                laborum officia officiis optio perspiciatis placeat praesentium quas quo reiciendis, sed sequi tempora,
+                voluptatum.
+            </p>
+        </div>
+
+        <h2 class="pt-3">Prochaines activités</h2>
+        <div class="row text-center">
+            {% for i in 0..3 %}
+                <div class="col col-lg-6">
+                    <div class="card text-primary-dark text-nowrap mt-4 shadow">
+                        <div class="card-header p-1">
+                            <div class="event-info-header d-flex justify-content-between">
+                                <p class="m-0 ml-2 badge text-light badge-{{ i % 2 == 0 ? 'warning':'success' }}">
+                                    {{ i % 2 == 0 ? 'Jeux de Plateau':'Mah-Jong' }}
+                                </p>
+                                <p class="m-0 mr-2">8 Mai 2020 à 18:00</p>
+                            </div>
+                            <p class="bold m-0">Donjon & Dragon : Vous allez mourrir !</p>
+                        </div>
+                        <div id="body-event{{ loop.index }}" class="collapse">
+                            <p class="m-3 event-short-desc text-wrap">Il est pas une activité improductive, ni celui qui
+                                cherche profit
+                                pour une épargne excédentaire au-delà de la satisfaction de ces besoins
+                                Chaque conférence populaire de base choisit son secrétariat
+                                Tout système de gouvernement contraires à cette méthode, la méthode des conférences
+                                populaires, est
+                                antidémocratique.
+                            </p>
+                            <div class="info-body-event d-flex justify-content-between">
+                                <p class="m-0 ml-3"><i class="fas fa-home"></i> Foyer des Seniors</p>
+                                <p class="m-0 mr-3"><i class="fas fa-users"></i> 4 place(s) restantes</p>
+                            </div>
+                            <a href="" class="btn btn-secondary m-3">Je m'inscris !</a>
+                        </div>
+                        <div class="see-more card-footer btn text-center text-light bg-primary" data-toggle="collapse"
+                             data-target="#body-event{{ loop.index }}">
+                            Voir
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <a href="{{ path('agenda') }}" class="mt-4 btn btn-secondary text-light shadow">Voir toutes les activités</a>
+    </div>
+{% endblock %}

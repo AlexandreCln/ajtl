@@ -1,0 +1,27 @@
+// Reset CSS
+@import "helpers/_reset";
+
+// Colors
+@import "helpers/_colors";
+
+// Fonts
+@import "helpers/_fonts";
+
+// Packages
+@import "~bootstrap/scss/bootstrap";
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+@import '~@fortawesome/fontawesome-free/scss/solid';
+@import '~@fortawesome/fontawesome-free/scss/regular';
+@import '~@fortawesome/fontawesome-free/scss/brands';
+
+// Custom
+@import "helpers/_global";
+@import "common/_navbar";
+@import "common/_footer";
+@import "pages/home";
+@import "pages/agenda";
+@import "pages/activities";
+@import "pages/presentation";
+
+// Hamburger menu animation
+@import "~hamburgers/_sass/hamburgers/hamburgers";

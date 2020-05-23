@@ -1,0 +1,93 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Agenda{% endblock %}
+
+{% block body %}
+    <div class="container text-primary-dark">
+        <h1 class="mt-5 mb-0 text-center text-lg-left">Agenda</h1>
+        <hr class="mt-2 mb-5">
+        <div class="m-4 d-flex justify-content-around text-nowrap flex-wrap">
+            <select class="p-1 m-1 text-primary">
+                <option selected>- Type d'activité -</option>
+                <option value="1">Jeux de Rôle</option>
+                <option value="2">Jeux de Plateau</option>
+                <option value="3">Projections Vidéo</option>
+            </select>
+            <a href="" class="m-1 btn btn-secondary"><i class="fas fa-plus-circle"></i> Proposer une
+                activité</a>
+        </div>
+        <div class="d-flex justify-content-around flex-wrap">
+            {% for i in 1..5 %}
+                <div class="p-3 my-4 m-lg-4 event bg-light rounded shadow">
+                    <div class="d-flex justify-content-between align-middle">
+                        <div class="p-1 badge badge-secondary d-inline-flex align-items-center">
+                            Jeux de Rôle
+                        </div>
+                        <div class="text-nowrap">
+                            18 Mai 2020 à 19:00
+                        </div>
+                    </div>
+                    <h2>Donjon & Dragon</h2>
+
+                    <div class="d-flex justify-content-between">
+                        <div class="mr-4">
+                            <i class="fas fa-users"></i> 4 place(s) restantes
+                        </div>
+                        <div class="ml-auto">
+                            {# Todo: lien vers plan#}
+                            <i class="fas fa-home"></i> Foyer des Seniors
+                        </div>
+                    </div>
+
+                    <div class="mt-3 mx-auto slots-players justify-content-center d-flex flex-wrap">
+                        <figure class="organizer">
+                            <a class="player rounded-circle shadow" href="">
+                                <img title="Lalie" src="{{ asset('build/lalie.webp') }}" alt="">
+                            </a>
+                            <img class="crown" src="{{ asset('build/crown.svg') }}">
+                        </figure>
+                        <figure class="">
+                            <a href="" class="player rounded-circle shadow">
+                                <img title="Yoan" src="{{ asset('build/yoan.webp') }}" alt="">
+                            </a>
+
+                        </figure>
+                        <figure class="key-owner">
+                            <a href="" class="player rounded-circle shadow">
+                                <img title="Vincent" src="{{ asset('build/vincent.webp') }}" alt="">
+                            </a>
+                            <img class="key" src="{{ asset('build/key.svg') }}">
+                        </figure>
+                        <img class="vacancy rounded-circle shadow" title="Place disponible"
+                             src="{{ asset('build/placeholder-user.png') }}" alt="Place disponible">
+                        <img class="vacancy rounded-circle shadow" title="Place disponible"
+                             src="{{ asset('build/placeholder-user.png') }}" alt="Place disponible">
+                        <img class="vacancy rounded-circle shadow" title="Place disponible"
+                             src="{{ asset('build/placeholder-user.png') }}" alt="Place disponible">
+                    </div>
+
+                    <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus dolore
+                        dolorem eius eos est
+                        harum
+                        impedit iste nihil nostrum nulla numquam odio, quisquam repellat repudiandae saepe sequi sint
+                        tenetur.
+                    </p>
+
+                    <div class="d-flex justify-content-around flex-wrap text-nowrap">
+                        <a href="" class="mx-1 mt-2 btn btn-secondary"><i class="fas fa-sign-in-alt"></i> Je m'inscrit !</a>
+                        <a href="" class="mx-1 mt-2 btn btn-secondary"><i class="far fa-comments"></i> Discussion Forum</a>
+                    </div>
+
+                    <div class="mt-3 alert-warning p-1 text-center rounded">
+                        <i class="fas fa-exclamation-circle"></i> Cette activité n'a pas encore de clé
+                        <a href="" class="m-1 border-0 rounded"><u>Indiquer que vous l'avez</u></a>
+                    </div>
+                    <div class="mt-3 alert-success p-1 text-center rounded">
+                        <i class="fas fa-exclamation-circle"></i> Vous avec indiqué que vous avez la clé
+                        <a href="" class="m-1 border-0 rounded"><u>Annuler</u></a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
