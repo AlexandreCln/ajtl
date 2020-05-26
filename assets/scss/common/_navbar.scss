@@ -8,11 +8,6 @@ $hamburger-layer-width: 33px !default;
   font-weight: 400;
   margin: 0 6px 0 6px;
 }
-
-.logo-ajtl {
-  height: 6rem;
-  border-radius: 50%;
-}
 .navbar-toggler:hover,
 .navbar-toggler:active,
 .navbar-toggler:focus,
@@ -21,7 +16,6 @@ $hamburger-layer-width: 33px !default;
   outline: 0;
   background-color: $primary-dark;
 }
-
 .dropdown-item:hover {
   background-color: lighten($primary-dark, 3%);
 }
