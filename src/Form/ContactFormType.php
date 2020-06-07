@@ -17,15 +17,17 @@ class ContactFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+            ->add('name', TextType::class, [
+                'label' => 'Votre Nom',
+                'required' => true,
+                'attr' => ['placeholder' => 'Gandalf'],
+                'constraints' => [new NotBlank(['message' => "Veuillez remplir ce champ."])]
+            ])
             ->add('email_address', TextType::class, [
-                'label' => 'Email',
+                'label' => 'Votre Email',
+                'attr' => ['placeholder' => 'gandalf@gmail.com'],
                 'required' => true,
                 'constraints' => [new Email(['message' => "Veuillez saisir une adresse email valide."])]
-            ])
-            ->add('subject', TextType::class, [
-                'label' => 'Sujet',
-                'required' => false,
-                'constraints' => [new Length(['max' => 40, 'maxMessage' => 'Le sujet ne doit pas dépasser 40 caractères.'])]
             ])
             ->add('text', TextareaType::class, [
                 'label' => 'Message',
@@ -33,10 +35,6 @@ class ContactFormType extends AbstractType
                 'required' => true,
                 'constraints' => [new NotBlank(['message' => "Veuillez remplir ce champ."])]
                 ])
-            ->add('send', SubmitType::class, [
-                'label' => 'Envoyer',
-                'attr' => ['class' => 'btn btn-primary-dark']
-            ])
         ;
     }
 

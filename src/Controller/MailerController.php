@@ -11,7 +11,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class MailerController extends AbstractController
 {
-    const FROM_EMAIL = 'hello@example.com';
+    const TO_EMAIL = 'alex97.coul@gmail.com';
     // Todo: variable administrable ?
 
     /**
@@ -26,16 +26,10 @@ class MailerController extends AbstractController
             $data = $form->getData();
 
             $email = (new Email())
-                ->from(self::FROM_EMAIL)
-                ->to($data['email_address'])
-                ->subject($data['subject']? $data['subject']:'Contact AJTL')
-                ->text($data['text'])
-                ->html('<p>See Twig integration for better HTML integration!</p>');
-
-            // if $email do not need ->subject()
-//            if ($data['subject']) {
-//                $email->subject($data['subject']);
-//            }
+                ->from($data['email_address'])
+                ->to(self::TO_EMAIL)
+                ->subject('Contact AJTL')
+                ->text($data['text']);
 
             $mailer->send($email);
 

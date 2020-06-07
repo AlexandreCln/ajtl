@@ -8,11 +8,11 @@
         <hr class="mt-2 mb-5">
 
         {{ form_start(form) }}
+        {{ form_row(form.name) }}
         {{ form_row(form.email_address) }}
-        {{ form_row(form.subject) }}
         {{ form_row(form.text) }}
         <div class="text-center">
-            {{ form_row(form.send) }}
+            <button type="submit" class="btn btn-primary-dark"><i class="mr-1 fas fa-paper-plane"></i> Envoyer</button>
         </div>
         {{ form_end(form) }}
     </div>
