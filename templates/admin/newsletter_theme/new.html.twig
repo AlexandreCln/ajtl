@@ -1,0 +1,13 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}New NewsletterTheme{% endblock %}
+
+{% block body %}
+    <div class="container text-primary-dark">
+        <h1 class="mt-5 mb-0 text-center text-lg-left">Nouveau Thème</h1>
+        <hr class="mt-2 mb-5">
+
+        <a href="{{ path('newsletter_theme_index') }}" class="btn btn-secondary">Retour</a>
+        {{ include('admin/newsletter_theme/_form.html.twig') }}
+    </div>
+{% endblock %}

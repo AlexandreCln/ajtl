@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}{% endblock %}</title>
+
+    {{ encore_entry_link_tags('app_admin') }}
+    {% block stylesheets %}{% endblock %}
+
+</head>
+<body>
+
+<header>
+    <div class="d-flex" id="wrapper">
+        {% include 'admin/common_parts/sidebar.html.twig' %}
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom d-flex justify-content-between">
+                <button id="menu-toggle" class="btn btn-primary-dark p-1 px-2">
+                    <i class="fas fa-2x fa-bars"></i>
+                </button>
+
+                <a href="" class="btn btn-primary-dark" id="menu-toggle">Déconnexion</a>
+            </nav>
+            {% block body %}{% endblock %}
+        </div>
+    </div>
+</header>
+
+{{ encore_entry_script_tags('app_admin') }}
+{% block javascripts %}{% endblock %}
+
+</body>
+</html>

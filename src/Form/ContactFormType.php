@@ -20,12 +20,11 @@ class ContactFormType extends AbstractType
             ->add('name', TextType::class, [
                 'label' => 'Votre Nom',
                 'required' => true,
-                'attr' => ['placeholder' => 'Gandalf'],
                 'constraints' => [new NotBlank(['message' => "Veuillez remplir ce champ."])]
             ])
             ->add('email_address', TextType::class, [
                 'label' => 'Votre Email',
-                'attr' => ['placeholder' => 'gandalf@gmail.com'],
+                'attr' => ['placeholder' => '(adresse à laquelle vous recontacter)'],
                 'required' => true,
                 'constraints' => [new Email(['message' => "Veuillez saisir une adresse email valide."])]
             ])

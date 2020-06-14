@@ -4,7 +4,7 @@
 
 {% block body %}
     <div class="container">
-        <h1 class="mt-5 text-primary-dark">Adhésion au club</h1>
+        <h1 class="mt-5 text-primary-dark">Adhésion</h1>
         <hr class="mt-2 mb-5">
         <img class="activity-image rounded" src="{{ asset('build/taverne.jpeg') }}" alt="">
     </div>
@@ -13,8 +13,9 @@
             <a href="" target="_blank" class="my-3 mr-3 btn btn-secondary text-primary-dark"><i class="mr-2 fas fa-file-invoice"></i> Fiche d'Inscription</a>
             <a href="" target="_blank" class="my-3 btn btn-secondary text-primary-dark"><i class="mr-2 fas fa-book"></i> Règlement intérieur</a>
         </div>
-        <p>Télécharger puis remplissez le document d'inscription. <br>
-            Les documents ainsi que le paiement pour l'adhésion au club se fait en main propre.
+        <p>Télécharger puis remplissez la fiche d'inscription. <br>
+           La remise des documents et de la cotisation pour l'adhésion se fait en main propre <a href="{{ path('home') ~ '#location' }}"><u>au club</u></a>. <br>
+
         </p>
         <div class="my-5">
             <h2 class="text-primary-dark">Tarifs</h2>

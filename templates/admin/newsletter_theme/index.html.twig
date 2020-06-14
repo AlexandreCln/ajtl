@@ -1,0 +1,38 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}NewsletterTheme index{% endblock %}
+
+{% block body %}
+    <div class="container text-primary-dark">
+        <h1 class="mt-5 mb-0 text-center text-lg-left">Thèmes de Newsletter</h1>
+        <hr class="mt-2 mb-5">
+
+        <a href="{{ path('newsletter_theme_new') }}" class="btn btn-secondary"><i class="fas fa-plus-circle"></i> Nouveau</a>
+
+        <table class="table">
+            <thead>
+            <tr>
+                <th class="border-0"></th>
+                <th class="border-0"></th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for newsletter_theme in newsletter_themes %}
+                <tr>
+                    <td>{{ newsletter_theme.title }}</td>
+                    <td class="d-flex align-items-center">
+                        <a href="{{ path('newsletter_theme_edit', {'id': newsletter_theme.id}) }}" class="mr-2">
+                            <i class="far fa-edit"></i>
+                        </a>
+                        {{ include('admin/newsletter_theme/_delete_form.html.twig') }}
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="3">no records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
