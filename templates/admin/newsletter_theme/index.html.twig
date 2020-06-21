@@ -1,10 +1,10 @@
 {% extends 'admin/base.html.twig' %}
 
-{% block title %}NewsletterTheme index{% endblock %}
+{% block title %}Thèmes Newsletter{% endblock %}
 
 {% block body %}
     <div class="container text-primary-dark">
-        <h1 class="mt-5 mb-0 text-center text-lg-left">Thèmes de Newsletter</h1>
+        <h1 class="mt-5 mb-0 text-center text-lg-left">Thèmes Newsletter</h1>
         <hr class="mt-2 mb-5">
 
         <a href="{{ path('newsletter_theme_new') }}" class="btn btn-secondary"><i class="fas fa-plus-circle"></i> Nouveau</a>
@@ -29,7 +29,7 @@
                 </tr>
             {% else %}
                 <tr>
-                    <td colspan="3">no records found</td>
+                    <td colspan="3">Aucun thème pour le moment</td>
                 </tr>
             {% endfor %}
             </tbody>
