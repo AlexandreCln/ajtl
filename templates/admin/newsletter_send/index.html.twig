@@ -1,0 +1,19 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Thèmes Newsletter{% endblock %}
+
+{% block body %}
+    {% include 'common/_flash-messages.html.twig' %}
+
+    <div class="container text-primary-dark">
+        <h1 class="mt-5 mb-0 text-center text-lg-left">Envoyer une Newsletter</h1>
+        <hr class="mt-2 mb-5">
+
+        <div class="my-4">
+            {{ form_start(form) }}
+            {{ form_widget(form) }}
+            <button class="btn btn-primary-dark">{{ button_label|default('Sauvegarder') }}</button>
+            {{ form_end(form) }}
+        </div>
+    </div>
+{% endblock %}

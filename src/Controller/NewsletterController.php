@@ -4,17 +4,19 @@ namespace App\Controller;
 
 use App\Entity\NewsletterSubscriber;
 use App\Entity\NewsletterTheme;
+use App\Form\NewsletterSendType;
 use App\Form\NewsletterThemeType;
 use App\Form\NewsletterSubscriberType;
 use App\Repository\NewsletterSubscriberRepository;
 use App\Repository\NewsletterThemeRepository;
 use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Mailer\Exception\TransportExceptionInterface;
 use Symfony\Component\Mailer\MailerInterface;
-use Symfony\Component\Mime\Email;
+use Symfony\Component\Mime\Address;
 use Symfony\Component\Routing\Annotation\Route;
 
 class NewsletterController extends AbstractController
@@ -63,33 +65,40 @@ class NewsletterController extends AbstractController
      */
     public function sendNewsletter(MailerInterface $mailer, Request $request)
     {
-//        $form = $this->createForm(NewsletterSubscriberType::class);
-//        $form->handleRequest($request);
+        $form = $this->createForm(NewsletterSendType::class);
+        $form->handleRequest($request);
 
-//        if ($form->isSubmitted() && $form->isValid()) {
+        if ($form->isSubmitted() && $form->isValid()) {
 
-        $newsletter = (new Email())
-            ->from('hello@example.com')
-            ->to('alex97.coul@gmail.com')
-            //->addTo('toto@example.com')
-            //->addTo('titi@example.com')
-            // or
-            //->cc('toto@example.com', 'titi@example.com')
-            //->bcc('bcc@example.com')
-            //->replyTo('fabien@example.com')
-            //->priority(Email::PRIORITY_HIGH)
-            ->subject('Time for Symfony Mailer!')
-            ->text('Sending emails is fun again!')
-            ->html('<p>See Twig integration for better HTML integration!</p>');
+            $data = $form->getData();
+            $subscribers = $data['theme']->getNewsletterSubscribers();
+            $file = $form->get('file')->getData();
 
-        $mailer->send($newsletter);
+            $newsletter = (new TemplatedEmail())
+                ->from(new Address('ajtl@example.com', 'AJTL'))
+                ->subject($data['subject'])
+                ->embedFromPath($file->getPathname(), 'image')
+                ->htmlTemplate('admin/newsletter_send/template.html.twig')
+                ->context(['message' => $data['message'],])
+                ;
 
-        $this->addFlash('success', 'La newsletter à bien été envoyée !');
+            foreach ($subscribers as $subscriber) {
+                $newsletter->addTo($subscriber->getEmail());
+            }
 
-        return $this->redirectToRoute('newsletter_send');
-//        }
+            try {
+                $mailer->send($newsletter);
+                $this->addFlash('success', 'La newsletter à bien été envoyée aux abonnés !');
+            } catch (TransportExceptionInterface $e) {
+                $this->addFlash('success', 'Une erreur est survenue et la newsletter n\' à pas pu être envoyée.');
+            }
 
-//        return $this->render('');
+            return $this->redirectToRoute('newsletter_send');
+        }
+
+        return $this->render('admin/newsletter_send/index.html.twig', [
+            'form' => $form->createView()
+        ]);
     }
 
     /**

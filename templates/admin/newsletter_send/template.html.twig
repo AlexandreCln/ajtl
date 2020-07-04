@@ -1,0 +1,9 @@
+{% apply inline_css(source('@css/template-newsletter.css')) %}
+
+    {% if message %}
+        <p>{{ message }}</p>
+    {% endif %}
+
+    <img src="cid:image">
+
+{% endapply %}
