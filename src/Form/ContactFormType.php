@@ -18,18 +18,18 @@ class ContactFormType extends AbstractType
     {
         $builder
             ->add('name', TextType::class, [
-                'label' => 'Votre Nom',
+                'label' => 'Nom *',
                 'required' => true,
                 'constraints' => [new NotBlank(['message' => "Veuillez remplir ce champ."])]
             ])
             ->add('email_address', TextType::class, [
-                'label' => 'Votre Email',
-                'attr' => ['placeholder' => '(adresse à laquelle vous recontacter)'],
+                'label' => 'Email *',
+                'help' => 'Adresse à laquelle vous recontacter',
                 'required' => true,
                 'constraints' => [new Email(['message' => "Veuillez saisir une adresse email valide."])]
             ])
             ->add('text', TextareaType::class, [
-                'label' => 'Message',
+                'label' => 'Message *',
                 'attr' => ['rows' => '6'],
                 'required' => true,
                 'constraints' => [new NotBlank(['message' => "Veuillez remplir ce champ."])]

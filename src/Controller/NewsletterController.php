@@ -61,9 +61,10 @@ class NewsletterController extends AbstractController
 
     /**
      * @Route("/admin/envoyer-newsletter", name="newsletter_send")
-     * @throws TransportExceptionInterface
+     * @param MailerInterface $mailer
+     * @param Request $request
      */
-    public function sendNewsletter(MailerInterface $mailer, Request $request)
+    public function sendNewsletter(MailerInterface $mailer, Request $request): Response
     {
         $form = $this->createForm(NewsletterSendType::class);
         $form->handleRequest($request);
@@ -77,10 +78,13 @@ class NewsletterController extends AbstractController
             $newsletter = (new TemplatedEmail())
                 ->from(new Address('ajtl@example.com', 'AJTL'))
                 ->subject($data['subject'])
-                ->embedFromPath($file->getPathname(), 'image')
                 ->htmlTemplate('admin/newsletter_send/template.html.twig')
                 ->context(['message' => $data['message'],])
                 ;
+
+            if ($file) {
+                $newsletter->embedFromPath($file->getPathname(), 'image');
+            }
 
             foreach ($subscribers as $subscriber) {
                 $newsletter->addTo($subscriber->getEmail());
@@ -92,8 +96,6 @@ class NewsletterController extends AbstractController
             } catch (TransportExceptionInterface $e) {
                 $this->addFlash('success', 'Une erreur est survenue et la newsletter n\' à pas pu être envoyée.');
             }
-
-            return $this->redirectToRoute('newsletter_send');
         }
 
         return $this->render('admin/newsletter_send/index.html.twig', [
