@@ -11,10 +11,12 @@
     font-size: 23px;
   }
 }
-
 .activity-image {
   object-fit: cover;
   min-height: 200px;
   max-height: 380px;
   width: 100%;
+}
+.info-card {
+  width: 250px;
 }

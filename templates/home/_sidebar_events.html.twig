@@ -1,5 +1,5 @@
 
-<a href="{{ path('agenda') }}" class="mt-3 btn btn-secondary text-primary-dark shadow">Toutes les activités</a>
+<a href="{{ path('agenda') }}" class="mt-3 btn btn-secondary text-primary-dark shadow">Tout voir</a>
 
 {% for i in 1..5 %}
     <div class="p-1 mt-3 card text-primary-dark shadow">
@@ -10,7 +10,7 @@
                 </p>
                 <p class="m-0 mr-2">8 Mai 2020 à 18:00</p>
             </div>
-            <p class="bold m-2">{{ i % 2 == 0 ? 'Donjon & Dragon':'Mah-Jong' }}</p>
+            <p class="m-2">{{ i % 2 == 0 ? 'Donjon & Dragon':'Mah-Jong' }}</p>
         </div>
         <div class="event-info d-flex justify-content-between">
             <p class="m-0 ml-3"><i class="fas fa-home"></i> Foyer des Seniors</p>
