@@ -7,31 +7,36 @@
         <h1 class="mt-5 mb-0 text-center text-lg-left">Jeux de Rôle</h1>
         <hr class="mt-2 mb-5">
         <img class="activity-image rounded shadow" src="{{ asset('build/taverne.jpeg') }}" alt="">
-        <div class="my-4 activities d-flex justify-content-around flex-wrap text-center text-primary-dark">
-            <div class="m-4 d-flex flex-column justify-content-between">
-                <div>
-                    <h2 class="bold">Jours & Horaires:</h2>
-                    <p>Jeudis à 19h30 <br>
-                        Dimanches à 19h</p>
-                </div>
-
-                <div>
-                    <h2>Lieux: </h2>
-                    <p class="m-0">
-                        <a class="text-primary-dark" href="{{ path('home') ~ '#location' }}">
-                            Foyer des Seniors <i class="fas fa-search ml-2 text-primary"></i>
-                        </a>
-                    </p>
-                </div>
+        
+        <div class="mt-5 d-flex justify-content-center align-items-start flex-wrap activities text-center text-primary-dark">
+            <div class="p-3 m-3 info-card bg-light rounded shadow">
+                <h2 class="bold">Planning:</h2>
+                <p class="m-0">
+                {# Todo: liste à puce en gardant les points ? c'est plus habituel pour un planning #}
+                    Jeudis à 19h30 <br>
+                    Dimanches à 19h <br>
+                    Encore les Jeudis à 19h30 :S
+                </p>
             </div>
 
-            <div class="p-3 m-4 bg-primary-dark text-light shadow rounded">
-                <h2 class="mb-3">Référent: </h2>
-                <img class="mx-auto referent-pic rounded-circle shadow" src="{{ asset('build/daniel.webp') }}" alt="">
+            <div class="p-3 m-3 info-card bg-light rounded shadow">
+                <h2 class="mb-3 bold">Référent: </h2>
+                <img class="mx-auto referent-pic rounded shadow" src="{{ asset('build/daniel.webp') }}" alt="">
                 <p class="m-0">Daniel</p>
                 <p class="m-0"><i class="mr-1 fas fa-phone-alt"></i> 06 00 00 00 00</p>
             </div>
+            <div class="p-3 m-3 info-card bg-light rounded shadow">
+                <h2 class="bold">Lieux: </h2>
+                <p class="m-0">
+                {# Todo: if location === mainLocation par exemple #}
+                    <a class="text-primary-dark" href="{{ path('home') ~ '#location' }}">
+                        Foyer des Seniors <i class="ml-2 fas fa-map-marked-alt text-primary"></i></i>
+                    </a>
+                     <br>
+                </p>
+            </div>
         </div>
+
         <div class="mb-5">
             <h2 class="mt-5">À propos</h2>
             <p class="mt-4 mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquam, animi
