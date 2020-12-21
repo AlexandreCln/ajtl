@@ -48,7 +48,7 @@ class NewsletterController extends AbstractController
 
                 $em->persist($subscriber);
                 $em->flush();
-                $this->addFlash('success', 'Votre abonnement aux newsletters à bien été mis à jour.');
+                $this->addFlash('success', 'Votre abonnement aux newsletters a bien été mis à jour.');
             }
 
             return $this->redirectToRoute('home');

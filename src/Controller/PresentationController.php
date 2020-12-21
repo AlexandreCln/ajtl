@@ -2,9 +2,9 @@
 
 namespace App\Controller;
 
-use App\Entity\Information;
+use App\Entity\Presentation;
 use App\Form\PresentationType;
-use App\Repository\InformationRepository;
+use App\Repository\PresentationRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -15,30 +15,30 @@ class PresentationController extends AbstractController
     /**
      * @Route("/presentation", name="presentation")
      */
-    public function index(InformationRepository $informationRepo)
+    public function index(PresentationRepository $presentationnRepo)
     {
         return $this->render('presentation/index.html.twig', [
-            'information' => $informationRepo->findOneBy([]),
+            'presentation' => $presentationnRepo->findUniqueRow(),
         ]);
     }
 
     /**
      * @Route("/admin/presentation", name="admin_presentation")
      */
-    public function adminIndex(Request $request, InformationRepository $informationRepo, EntityManagerInterface $em)
+    public function adminIndex(Request $request, PresentationRepository $presentationRepo, EntityManagerInterface $em)
     {
-        // Get the unique row of Information table
-        $information = $informationRepo->findOneBy([]);
+        // Get the unique row of Presentation table
+        $presentation = $presentationRepo->findUniqueRow();
         // or create a new
-        if (! $information instanceof Information) {
-            $information =  new Information();
+        if (!$presentation instanceof Presentation) {
+            $presentation =  new Presentation();
         }
 
-        $form = $this->createForm(PresentationType::class, $information);
+        $form = $this->createForm(PresentationType::class, $presentation);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $em->persist($information);
+            $em->persist($presentation);
             $em->flush();
 
             $this->addFlash('success', 'Les informations ont bien été mises à jour !');
