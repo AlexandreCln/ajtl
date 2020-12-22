@@ -8,7 +8,5 @@ const $ = require('jquery');
 require('bootstrap');
 
 // Custom JavaScript
-$("#menu-toggle").click(function(e) {
-    e.preventDefault();
-    $("#wrapper").toggleClass("toggled");
-});
+import * as dashboard from './pages/admin/dashboard.js';
+dashboard.toggleMenu();
