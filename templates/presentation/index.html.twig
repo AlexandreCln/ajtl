@@ -26,36 +26,23 @@
                 </div>
             {% endfor %}
         </div>
-        <h2 class="mt-5 text-center">À propos</h2>
-        <p class="mt-4 text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid aperiam atque autem blanditiis culpa cum
-            dolores enim illum laudantium libero nulla odit quae quia rem sunt totam unde, veritatis vitae!
-            Amet architecto aspernatur blanditiis consectetur dolor dolorem dolores ducimus ea eius error fugit iure,
-            molestias necessitatibus obcaecati omnis optio perferendis quae quasi, quia quo saepe totam ut velit
-            voluptatem voluptates!
-            Aspernatur consequatur delectus deleniti ea enim incidunt ipsam maxime nemo nulla officia provident quam,
-            ratione, repellat temporibus vel. Accusantium aliquid assumenda beatae dignissimos dolorum quaerat sit
-            soluta unde. Molestias, ut.
-            Adipisci alias amet architecto aspernatur corporis culpa deserunt doloremque est exercitationem explicabo
-            id iure magni maiores nam, natus, necessitatibus nisi nostrum quod quos recusandae, sequi soluta tempora
-            temporibus tenetur velit?
-            Accusamus consequuntur cumque, debitis dignissimos dolore eaque eius expedita facilis inventore iure
-            placeat, praesentium quaerat, quis repellat sapiente similique tempore temporibus vel veniam vero. Id ipsa
-            neque quasi quisquam voluptatum?
-        </p>
+
+        {% set aboutText = presentation.aboutText %}
+        {% if aboutText %}
+            <h2 class="mt-5 text-center">À propos</h2>
+            <p class="mt-4 text-center">{{ aboutText }}</p>
+        {% endif %}
+
         <div class="d-flex justify-content-center">
             <a class="m-2 btn btn-secondary text-primary-dark" href="{{ path('membership') }}">
                 <i class="mr-1 fas fa-sign-in-alt"></i> Nous rejoindre
             </a>
         </div>
-        <h2 class="mt-5 text-center">Informations générales</h2>
-        <p class="mt-4 mb-5 text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid aperiam atque autem blanditiis culpa cum
-            dolores enim illum laudantium libero nulla odit quae quia rem sunt totam unde, veritatis vitae!
-            Amet architecto aspernatur blanditiis consectetur dolor dolorem dolores ducimus ea eius error fugit iure,
-            molestias necessitatibus obcaecati omnis optio perferendis quae quasi, quia quo saepe totam ut velit
-            voluptatem voluptates!
-            Aspernatur consequatur delectus deleniti ea enim incidunt ipsam maxime nemo nulla officia provident quam,
-            ratione, repellat temporibus vel. Accusantium aliquid assumenda beatae dignissimos dolorum quaerat sit
-            soluta unde. Molestias, ut.
-        </p>
+
+        {% set generalText = presentation.generalText %}
+        {% if generalText %}
+            <h2 class="mt-5 text-center">Informations générales</h2>
+            <p class="mt-4 mb-5 text-center">{{ generalText }}</p>
+        {% endif %}
     </div>
 {% endblock %}

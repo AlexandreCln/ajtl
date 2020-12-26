@@ -1,0 +1,15 @@
+{#  Import built-in-theme to inherit all its blocks, 
+    instead of creating all input types.  #}
+{% use 'form_div_layout.html.twig' %}
+
+{% block form_row %}
+    <div class="wrap-input">
+        {{- form_label(form, null, { 'label_attr': {'class': 'label-input' }}) -}}
+        {{- form_widget(form, { 'attr': {'class': 'input' }}) -}}
+        <span class="focus-input"></span>          
+        {{- form_help(form) -}}
+    </div>
+    <div class="errors mb-2">
+        {{- form_errors(form) -}}
+    </div>
+{% endblock form_row %}
