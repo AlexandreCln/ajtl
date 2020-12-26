@@ -3,8 +3,7 @@
 {%- block title -%}Connexion{%- endblock -%}
     
 {% block stylesheets %}
-	<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-    {{ encore_entry_link_tags('login') }}
+    {{ encore_entry_link_tags('custom_form') }}
 {% endblock %} 
     
 {% block body %}
@@ -47,46 +46,48 @@
 	</form>
     #}
 
-<div class="container-login100">
-	<div class="wrap-login100 shadow">
-		<div class="login100-form-title">
-			<span class="login100-form-title-1">
+<div class="container-login">
+	<div class="wrap-login shadow">
+		<div class="login-form-title">
+			<span class="login-form-title-1">
 				Connectez vous !
 			</span>
 		</div>
-		<form class="login100-form validate-form">
-			<div class="wrap-input100 validate-input m-b-26" data-validate="Entrez votre nom d'utilisateur">
-				<span class="label-input100">Utilisateur</span>
-				<input class="input100" type="text" name="username" placeholder="Entrez votre nom d'utilisateur">
-				<span class="focus-input100"></span>
+		<form class="login-form validate-form">
+			<div class="wrap-input validate-input">
+				<span class="label-input">Utilisateur</span>
+				<input class="input" type="text" name="username" placeholder="Entrez votre nom d'utilisateur">
+				<span class="focus-input"></span>
 			</div>
-			<div class="wrap-input100 validate-input m-b-18" data-validate="Entrez votre mot de passe">
-				<span class="label-input100 text-nowrap">Mot de passe</span>
-				<input class="input100" type="password" name="pass" placeholder="Entrez votre mot de passe">
-				<span class="focus-input100"></span>
+			<div class="wrap-input validate-input">
+				<span class="label-input text-nowrap">Mot de passe</span>
+				<input class="input" type="password" name="pass" placeholder="Entrez votre mot de passe">
+				<span class="focus-input"></span>
 			</div>
-			<div class="flex-sb-m w-full p-b-30 my-4">
-				<div class="contact100-form-checkbox">
-					<input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
-					<label class="label-checkbox100" for="ckb1">
+			<div class="flex-sb-m w-full p-b-30 my-3">
+				{# <div class="contact-form-checkbox">
+					<input class="input-checkbox" id="ckb1" type="checkbox" name="remember-me">
+					<label class="label-checkbox" for="ckb1">
 						Se souvenir de moi
 					</label>
-				</div>
+				</div> #}
 				<div>
 					<a href="#" class="txt1">
 						Mot de passe oublié?
 					</a>
 				</div>
 			</div>
-			<div class="container-login100-form-btn">
-				<button class="login100-form-btn">
+			<div class="container-login-form-btn">
+				<button type="submit" class="login-form-btn">
 					Connexion
 				</button>
+				<div class="d-flex align-items-center m-2">
+					<a href="{{ path('app_register') }}" class="txt1">
+						Je suis nouveau !
+					</a>
+				</div>
 			</div>
 		</form>
 	</div>
 </div>
-
-{{ encore_entry_script_tags('login') }}
-
 {% endblock %}

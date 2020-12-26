@@ -29,13 +29,18 @@ class Presentation
     private $generalText;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\User", mappedBy="presentatio")
+     * @ORM\ManyToMany(targetEntity="App\Entity\User")
+     * @ORM\JoinTable(
+     *      name="presentation_users",
+     *      joinColumns={@ORM\JoinColumn(name="user_id", referencedColumnName="id")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="presentation_id", referencedColumnName="id", unique=true)}
+     *      )
      */
-    private $coreUsers;
+    private $presentationUsers;
 
     public function __construct()
     {
-        $this->coreUsers = new ArrayCollection();
+        $this->presentationUsers = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -70,29 +75,24 @@ class Presentation
     /**
      * @return Collection|User[]
      */
-    public function getCoreUsers(): Collection
+    public function getPresentationUsers(): Collection
     {
-        return $this->coreUsers;
+        return $this->presentationUsers;
     }
 
-    public function addCoreUser(User $coreUser): self
+    public function addPresentationUser(User $user): self
     {
-        if (!$this->coreUsers->contains($coreUser)) {
-            $this->coreUsers[] = $coreUser;
-            $coreUser->setPresentatio($this);
+        if (!$this->presentationUsers->contains($user)) {
+            $this->presentationUsers[] = $user;
         }
 
         return $this;
     }
 
-    public function removeCoreUser(User $coreUser): self
+    public function removePresentationUser(User $user): self
     {
-        if ($this->coreUsers->contains($coreUser)) {
-            $this->coreUsers->removeElement($coreUser);
-            // set the owning side to null (unless already changed)
-            if ($coreUser->getPresentatio() === $this) {
-                $coreUser->setPresentatio(null);
-            }
+        if ($this->presentationUsers->contains($user)) {
+            $this->presentationUsers->removeElement($user);
         }
 
         return $this;

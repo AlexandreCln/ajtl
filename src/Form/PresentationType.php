@@ -15,8 +15,9 @@ class PresentationType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('coreUsers', EntityType::class, [
+            ->add('presentationUsers', EntityType::class, [
                 'class' => User::class,
+                'choice_label' => 'username',
                 'label' => 'Membres de l\'association',
             ])
             ->add('aboutText', TextareaType::class, ['label' => 'À propos'])

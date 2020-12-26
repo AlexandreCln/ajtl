@@ -1,0 +1,33 @@
+{% extends 'layout.html.twig' %}
+
+{%- block title -%}Créer un compte{%- endblock -%}
+
+{% block stylesheets %}
+    {{ encore_entry_link_tags('custom_form') }}
+{% endblock %}
+    
+{% block body %}
+
+<div class="pt-4 container">
+    <div class="wrap shadow">
+        <div class="header-form-title">
+            <span class="form-title">
+                Créez votre compte !
+            </span>
+        </div>
+
+        {# Applying default theme for this form to disabling global themes #}
+        {% form_theme registrationForm 'forms_themes/custom_form_theme.html.twig' %}
+
+        {{ form_start(registrationForm, { 'attr': {'class': 'form' }}) }}
+            {{ form_widget(registrationForm) }} {# A shortcut for calling form_row() on each field #}   
+
+            <div class="mt-4 container-form-btn d-flex flex-column">
+                <button type="submit" class="mr-auto form-btn">Sauvegarder</button>
+                <a href="{{ path('app_login') }}" class="mt-2 action-link">J'ai déjà un compte</a>
+            </div>
+        {{ form_end(registrationForm) }}
+        
+    </div>    
+</div>
+{% endblock %} 

@@ -128,21 +128,15 @@ button {
 button:hover {
   cursor: pointer;
 }
-iframe {
-  border: none !important;
-}
-.txt1 {
+.action-link {
   font-size: 14px;
   line-height: 1.7;
   color: #999;  
 }
-.limiter {
-  width: 100%;
-  margin: 0 auto;
-}
-.container-login100 {
+.container {
   width: 100%;
   min-height: 75vh;
+  padding-top: 37px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -154,14 +148,14 @@ iframe {
   padding: 15px;
   background-color: $background;
 }
-.wrap-login100 {
+.wrap {
   width: 670px;
   background: #fff;
   border-radius: 10px;
   overflow: hidden;
   position: relative;
 }
-.login100-form-title {
+.header-form-title {
   background-image: url('/build/taverne.jpeg');
   width: 100%;
   position: relative;
@@ -179,7 +173,7 @@ iframe {
   background-position: center;
   padding: 70px 15px 74px;
 }
-.login100-form-title-1 {
+.form-title {
   font-size: 36px;
   font-weight: 500;
   color: #fff;
@@ -187,7 +181,7 @@ iframe {
   line-height: 1.2;
   text-align: center;
 }
-.login100-form-title::before {
+.form-title::before {
   content: "";
   display: block;
   position: absolute;
@@ -198,7 +192,7 @@ iframe {
   left: 0;
   background-color: rgba(54, 84, 99, 0.7);
 }
-.login100-form {
+.form {
   width: 100%;
   display: -webkit-box;
   display: -webkit-flex;
@@ -209,12 +203,12 @@ iframe {
   justify-content: space-between;
   padding: 33px 88px 40px 190px;
 }
-.wrap-input100 {
+.wrap-input {
   width: 100%;
   position: relative;
   border-bottom: 1px solid #b2b2b2;
 }
-.label-input100 {
+.label-input {
   font-size: 16px;
   color: gray;
   line-height: 1.2;
@@ -224,7 +218,7 @@ iframe {
   left: -105px;
   width: 80px;
 }
-.input100 {
+.input {
   font-size: 16px;
   color: #555;
   line-height: 1.2;
@@ -233,7 +227,7 @@ iframe {
   background: 0 0;
   padding: 0 5px;
 }
-.focus-input100 {
+.focus-input {
   position: absolute;
   display: block;
   width: 100%;
@@ -242,7 +236,7 @@ iframe {
   left: 0;
   pointer-events: none;
 }
-.focus-input100::before {
+.focus-input::before {
   content: "";
   display: block;
   position: absolute;
@@ -256,19 +250,19 @@ iframe {
   transition: all 0.6s;
   background: $secondary;
 }
-input.input100 {
+input.input {
   height: 45px;
 }
-.input100:focus + .focus-input100::before {
+.input:focus + .focus-input::before {
   width: 100%;
 }
-.has-val.input100 + .focus-input100::before {
+.has-val.input + .focus-input::before {
   width: 100%;
 }
-.input-checkbox100 {
+.input-checkbox {
   display: none;
 }
-.label-checkbox100 {
+.label-checkbox {
   font-size: 14px;
   color: #999;
   line-height: 1.7;
@@ -277,7 +271,7 @@ input.input100 {
   padding-left: 26px;
   cursor: pointer;
 }
-.label-checkbox100::before {
+.label-checkbox::before {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   content: "\f00c";
@@ -304,10 +298,13 @@ input.input100 {
   -o-transform: translateY(-50%);
   transform: translateY(-50%);
 }
-.input-checkbox100:checked + .label-checkbox100::before {
+.input-checkbox:checked + .label-checkbox::before {
   color: $primary;
 }
-.container-login100-form-btn {
+.errors ul li {
+  color: indianred;
+}
+.container-form-btn {
   width: 100%;
   display: -webkit-box;
   display: -webkit-flex;
@@ -316,7 +313,7 @@ input.input100 {
   display: flex;
   flex-wrap: wrap;
 }
-.login100-form-btn {
+.form-btn {
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -338,80 +335,24 @@ input.input100 {
   -moz-transition: all 0.4s;
   transition: all 0.4s;
 }
-.login100-form-btn:hover {
+.form-btn:hover {
   background-color: $primary;
 }
 @media (max-width: 576px) {
-  .login100-form {
+  .form {
     padding: 33px 15px 40px 117px;
   }
 }
 @media (max-width: 480px) {
-  .login100-form {
+  .form {
     padding: 33px 15px 40px;
   }
-  .label-input100 {
+  .label-input {
     text-align: left;
     position: unset;
     top: unset;
     left: unset;
     width: 100%;
     padding: 0 5px;
-  }
-}
-.validate-input {
-  position: relative;
-}
-.alert-validate::before {
-  content: attr(data-validate);
-  position: absolute;
-  max-width: 70%;
-  background-color: #fff;
-  border: 1px solid #c80000;
-  border-radius: 2px;
-  padding: 4px 25px 4px 10px;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
-  transform: translateY(-50%);
-  right: 2px;
-  pointer-events: none;
-  color: #c80000;
-  font-size: 13px;
-  line-height: 1.4;
-  text-align: left;
-  visibility: hidden;
-  opacity: 0;
-  -webkit-transition: opacity 0.4s;
-  -o-transition: opacity 0.4s;
-  -moz-transition: opacity 0.4s;
-  transition: opacity 0.4s;
-}
-.alert-validate::after {
-  content: "\f00c";
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  display: block;
-  position: absolute;
-  color: #c80000;
-  font-size: 15px;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
-  transform: translateY(-50%);
-  right: 8px;
-}
-.alert-validate:hover:before {
-  visibility: visible;
-  opacity: 1;
-}
-@media (max-width: 992px) {
-  .alert-validate::before {
-    visibility: visible;
-    opacity: 1;
   }
 }

@@ -20,14 +20,21 @@ class User implements UserInterface
 
     /**
      * @ORM\Column(type="string", length=180, unique=true)
-     * @Assert\NotBlank()
-     * @Assert\Length(max="180")
+     * @Assert\NotBlank(message="Vous devez remplir ce champ.")
+     * @Assert\Length(max="180", maxMessage="Ce champ doit contenir au maximum {{ limit }} caractères.")
      * @Assert\Email()
      */
     private $email;
 
     /**
      * @ORM\Column(type="string", length=180, unique=true)
+     * @Assert\NotBlank(message="Vous devez remplir ce champ.")
+     * @Assert\Length(
+     *     min="2", 
+     *     max="20",
+     *     minMessage="Ce champ doit contenir au moins {{ limit }} caractères.",
+     *     maxMessage="Ce champ doit contenir au maximum {{ limit }} caractères."
+     * )
      */
     private $username;
 
@@ -39,13 +46,10 @@ class User implements UserInterface
     /**
      * @var string The hashed password
      * @ORM\Column(type="string")
+     * @Assert\NotBlank(message="Vous devez remplir ce champ.")
+     * @Assert\Length(min="7", minMessage="Ce champ doit contenir au moins 7 caractères.")
      */
     private $password;
-
-    /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Presentation", inversedBy="coreUsers")
-     */
-    private $presentation;
 
     public function getId(): ?int
     {
@@ -130,17 +134,5 @@ class User implements UserInterface
     {
         // If you store any temporary, sensitive data on the user, clear it here
         // $this->plainPassword = null;
-    }
-
-    public function getPresentation(): ?Presentation
-    {
-        return $this->presentation;
-    }
-
-    public function setPresentation(?Presentation $presentation): self
-    {
-        $this->presentation = $presentation;
-
-        return $this;
     }
 }
