@@ -155,7 +155,7 @@ button:hover {
   overflow: hidden;
   position: relative;
 }
-.header-form-title {
+.header-title {
   background-image: url('/build/taverne.jpeg');
   width: 100%;
   position: relative;
@@ -173,7 +173,7 @@ button:hover {
   background-position: center;
   padding: 70px 15px 74px;
 }
-.form-title {
+.title {
   font-size: 36px;
   font-weight: 500;
   color: #fff;
@@ -181,7 +181,7 @@ button:hover {
   line-height: 1.2;
   text-align: center;
 }
-.form-title::before {
+.title::before {
   content: "";
   display: block;
   position: absolute;
@@ -192,7 +192,7 @@ button:hover {
   left: 0;
   background-color: rgba(54, 84, 99, 0.7);
 }
-.form {
+form {
   width: 100%;
   display: -webkit-box;
   display: -webkit-flex;
@@ -200,8 +200,8 @@ button:hover {
   display: -ms-flexbox;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 33px 88px 40px 190px;
+  justify-content: center;
+  padding: 30px 0;
 }
 .wrap-input {
   width: 100%;
@@ -311,6 +311,8 @@ input.input {
   display: -moz-box;
   display: -ms-flexbox;
   display: flex;
+  flex-direction: column;
+  align-items: center;
   flex-wrap: wrap;
 }
 .form-btn {
@@ -338,15 +340,7 @@ input.input {
 .form-btn:hover {
   background-color: $primary;
 }
-@media (max-width: 576px) {
-  .form {
-    padding: 33px 15px 40px 117px;
-  }
-}
 @media (max-width: 480px) {
-  .form {
-    padding: 33px 15px 40px;
-  }
   .label-input {
     text-align: left;
     position: unset;

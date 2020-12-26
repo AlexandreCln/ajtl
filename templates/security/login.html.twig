@@ -46,45 +46,41 @@
 	</form>
     #}
 
-<div class="container-login">
-	<div class="wrap-login shadow">
-		<div class="login-form-title">
-			<span class="login-form-title-1">
+<div class="pt-4 container">
+	<div class="wrap shadow">
+		<div class="header-title">
+			<span class="title">
 				Connectez vous !
 			</span>
 		</div>
-		<form class="login-form validate-form">
-			<div class="wrap-input validate-input">
-				<span class="label-input">Utilisateur</span>
-				<input class="input" type="text" name="username" placeholder="Entrez votre nom d'utilisateur">
-				<span class="focus-input"></span>
-			</div>
-			<div class="wrap-input validate-input">
-				<span class="label-input text-nowrap">Mot de passe</span>
-				<input class="input" type="password" name="pass" placeholder="Entrez votre mot de passe">
-				<span class="focus-input"></span>
-			</div>
-			<div class="flex-sb-m w-full p-b-30 my-3">
-				{# <div class="contact-form-checkbox">
-					<input class="input-checkbox" id="ckb1" type="checkbox" name="remember-me">
-					<label class="label-checkbox" for="ckb1">
-						Se souvenir de moi
-					</label>
-				</div> #}
-				<div>
-					<a href="#" class="txt1">
-						Mot de passe oublié?
-					</a>
+		<form method="post">
+			<div>
+				{% if error %}
+					<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+				{% endif %}
+				<div class="mb-2 wrap-input">
+					<label class="label-input required" for="inputUsername">Nom d'Utilisateur</label>
+					<input type="text" value="{{ last_username }}" name="username" id="inputUsername" class="input" placeholder="Entrez votre nom d'utilisateur" required autofocus>
+					<span class="focus-input"></span>
 				</div>
-			</div>
-			<div class="container-login-form-btn">
-				<button type="submit" class="login-form-btn">
-					Connexion
-				</button>
-				<div class="d-flex align-items-center m-2">
-					<a href="{{ path('app_register') }}" class="txt1">
-						Je suis nouveau !
-					</a>
+				<div class="mb-2 wrap-input">
+					<label class="label-input required" for="inputPassword">Mot de passe</label>
+					<input type="password" name="password" id="inputPassword" class="input" placeholder="Entrez votre mot de passe" required>
+					<span class="focus-input"></span>
+				</div>
+				<input type="hidden" name="_csrf_token"
+		           	   value="{{ csrf_token('authenticate') }}"
+		    	>
+				<div class="mt-4 container-form-btn">
+					<button type="submit" class="form-btn">Connexion</button>
+					<div class="mt-2 d-flex flex-column">
+						<a href="#" class="action-link">
+							Mot de passe oublié?
+						</a>
+						<a href="{{ path('app_register') }}" class="action-link">
+							Je suis nouveau !
+						</a>
+					</div>
 				</div>
 			</div>
 		</form>
