@@ -38,7 +38,7 @@ Encore
     .addEntry('app', './assets/js/app.js')
     .addEntry('app_admin', './assets/js/app_admin.js')
 
-    .addStyleEntry('custom_form', './assets/scss/pages/custom_form.scss')
+    .addStyleEntry('card_form_theme', './assets/scss/pages/card_form_theme.scss')
 
     // When enabled, Webpack "splits" your files into smaller pieces for greater optimization.
     .splitEntryChunks()

@@ -7,13 +7,17 @@
         <h1 class="mt-5 mb-0 text-center text-lg-left">Contact</h1>
         <hr class="mt-2 mb-5">
 
-        {{ form_start(form) }}
-        {{ form_row(form.name) }}
-        {{ form_row(form.email_address) }}
-        {{ form_row(form.text) }}
-        <div class="text-center">
-            <button type="submit" class="btn btn-primary-dark"><i class="mr-1 fas fa-paper-plane"></i> Envoyer</button>
+        <div class="form-container">
+            {{ form_start(form) }}
+            <div class="d-flex justify-content-between flex-wrap">
+                {{ form_row(form.name) }}
+                {{ form_row(form.email_address) }}
+            </div>
+            {{ form_row(form.text) }}
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary-dark"><i class="mr-1 fas fa-paper-plane"></i> Envoyer</button>
+            </div>
+            {{ form_end(form) }}
         </div>
-        {{ form_end(form) }}
     </div>
 {% endblock %}

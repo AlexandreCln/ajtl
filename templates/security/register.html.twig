@@ -3,7 +3,7 @@
 {%- block title -%}Créer un compte{%- endblock -%}
 
 {% block stylesheets %}
-    {{ encore_entry_link_tags('custom_form') }}
+    {{ encore_entry_link_tags('card_form_theme') }}
 {% endblock %}
     
 {% block body %}
@@ -16,8 +16,7 @@
             </span>
         </div>
 
-        {# Applying default theme for this form to disabling global themes #}
-        {% form_theme registrationForm 'forms_themes/custom_form_theme.html.twig' %}
+        {% form_theme registrationForm 'form_themes/card_form_theme.html.twig' %}
 
         {{ form_start(registrationForm) }}
             {{ form_widget(registrationForm) }} {# A shortcut for calling form_row() on each field #}   
