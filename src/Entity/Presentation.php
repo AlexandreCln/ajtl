@@ -29,14 +29,14 @@ class Presentation
     private $generalText;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\User")
+     * @ORM\ManyToMany(targetEntity="App\Entity\PresentationPerson")
      * @ORM\JoinTable(
-     *      name="presentation_users",
-     *      joinColumns={@ORM\JoinColumn(name="user_id", referencedColumnName="id")},
+     *      name="presentation_persons_mapping",
+     *      joinColumns={@ORM\JoinColumn(name="presentation_person_id", referencedColumnName="id")},
      *      inverseJoinColumns={@ORM\JoinColumn(name="presentation_id", referencedColumnName="id", unique=true)}
      *      )
      */
-    private $presentationUsers;
+    private $presentationPersons;
 
     public function __construct()
     {
@@ -73,26 +73,26 @@ class Presentation
     }
 
     /**
-     * @return Collection|User[]
+     * @return Collection|PresentationPerson[]
      */
-    public function getPresentationUsers(): Collection
+    public function getPresentationPersons(): Collection
     {
-        return $this->presentationUsers;
+        return $this->presentationPersons;
     }
 
-    public function addPresentationUser(User $user): self
+    public function addPresentationPerson(PresentationPerson $presentationPerson): self
     {
-        if (!$this->presentationUsers->contains($user)) {
-            $this->presentationUsers[] = $user;
+        if (!$this->presentationPersons->contains($presentationPerson)) {
+            $this->presentationPersons[] = $presentationPerson;
         }
 
         return $this;
     }
 
-    public function removePresentationUser(User $user): self
+    public function removePresentationPerson(PresentationPerson $presentationPerson): self
     {
-        if ($this->presentationUsers->contains($user)) {
-            $this->presentationUsers->removeElement($user);
+        if ($this->presentationPersons->contains($presentationPerson)) {
+            $this->presentationPersons->removeElement($presentationPerson);
         }
 
         return $this;

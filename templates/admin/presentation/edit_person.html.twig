@@ -1,0 +1,13 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Modifier membre présentation{% endblock %}
+
+{% block body %}
+    <div class="container text-primary-dark">
+        <h1 class="mt-5 mb-0 text-center text-lg-left">Modifier le membre de la Présentation</h1>
+        <hr class="mt-2 mb-5">
+
+        <a href="{{ path('newsletter_theme_index') }}" class="btn btn-secondary">Retour</a>
+        {{ include('admin/presentation/_form.html.twig') }}
+    </div>
+{% endblock %}

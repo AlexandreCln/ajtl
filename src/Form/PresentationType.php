@@ -3,7 +3,7 @@
 namespace App\Form;
 
 use App\Entity\Presentation;
-use App\Entity\User;
+use App\Entity\PresentationPerson;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
@@ -15,11 +15,11 @@ class PresentationType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('presentationUsers', EntityType::class, [
-                'class' => User::class,
-                'choice_label' => 'username',
+            /* ->add('presentationPersons', EntityType::class, [
+                'class' => PresentationPerson::class,
+                'choice_label' => 'name',
                 'label' => 'Membres de l\'association',
-            ])
+            ]) */
             ->add('aboutText', TextareaType::class, ['label' => 'À propos'])
             ->add('generalText', TextareaType::class, ['label' => 'Informations générales']);
     }
