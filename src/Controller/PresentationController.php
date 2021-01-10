@@ -37,6 +37,8 @@ class PresentationController extends AbstractController
         // or create a new
         if (!$presentation instanceof Presentation) {
             $presentation =  new Presentation();
+            $em->persist($presentation);
+            $em->flush();
         }
 
         $form = $this->createForm(PresentationType::class, $presentation);

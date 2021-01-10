@@ -75,7 +75,7 @@ class Presentation
     /**
      * @return Collection|PresentationPerson[]
      */
-    public function getPresentationPersons(): ?Collection
+    public function getPresentationPersons(): Collection
     {
         return $this->presentationPersons;
     }
