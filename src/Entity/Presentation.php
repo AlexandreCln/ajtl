@@ -40,7 +40,7 @@ class Presentation
 
     public function __construct()
     {
-        $this->presentationUsers = new ArrayCollection();
+        $this->presentationPersons = new ArrayCollection();
     }
 
     public function getId(): ?int
