@@ -8,22 +8,15 @@
         <hr class="mt-2 mb-5">
 
         <div class="mb-5 row text-center">
-            {% for i in 0..1 %}
+            {% for person in presentation.presentationPersons %}
                 <div class="mt-4 member-team col-sm-6 col-md-4">
-                    <img class="rounded-circle shadow mx-auto" src="{{ asset('build/lalie.webp') }}" alt="">
-                    <h3 class="text-primary-dark m-0">Lalie</h3>
-                    <p class="text-primary bold">Présidente</p>
-                </div>
-                <div class="mt-4 member-team col-sm-6 col-md-4">
-                    <img class="rounded-circle shadow mx-auto" src="{{ asset('build/daniel.webp') }}" alt="">
-                    <h3 class="text-primary-dark m-0">Daniel</h3>
-                    <p class="text-primary bold">Référent JdR</p>
-                </div>
-                <div class="mt-4 member-team col-sm-6 col-md-4">
-                    <img class="rounded-circle shadow mx-auto" src="{{ asset('build/vincent.webp') }}" alt="">
-                    <h3 class="m-0 text-primary-dark">Vincent</h3>
-                    <p class="text-primary bold">Référent Mah-Jong</p>
-                </div>
+                    <img class="rounded-circle shadow mx-auto" 
+                         src="{{ uploaded_asset(person.pictureFilename) }}" 
+                         alt=""
+                    >
+                    <h3 class="text-primary-dark m-0">{{ person.name }}</h3>
+                    <p class="text-primary bold">{{ person.job }}</p>
+                </div>            
             {% endfor %}
         </div>
 

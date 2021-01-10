@@ -25,3 +25,6 @@ li {
   margin-left: auto;
   margin-right: auto;
 }
+.custom-file-input ~ .custom-file-label:lang(fr)::after {
+  content: "Choisir...";
+}

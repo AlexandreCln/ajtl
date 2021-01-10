@@ -1,6 +1,25 @@
 <div class="my-4">
     {{ form_start(form) }}
-    {{ form_widget(form) }}
+    
+    {{ form_row(form.name) }}
+    {{ form_row(form.job) }}
+
+    <div class="row">
+    <div class="col-sm-9">
+            {{ form_row(form.pictureFile, {
+                attr: {
+                    'placeholder': form.vars.data.pictureFilename ? form.vars.data.originalPictureFilename : 'Sélectionnez une photo'
+                }
+            }) }}
+        </div>
+        <div class="col-sm-3">
+            {% if form.vars.data.pictureFilename %}
+                <img src="{{ uploaded_asset(form.vars.data.pictureFilename)|imagine_filter('squared_thumbnail_small') }}" height="100">
+            {% endif %}
+        </div>
+    </div>
+    
     <button class="btn btn-primary-dark">{{ button_label|default('Sauvegarder') }}</button>
+
     {{ form_end(form) }}
 </div>

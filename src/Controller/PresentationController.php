@@ -8,9 +8,11 @@ use App\Entity\PresentationPerson;
 use App\Form\PresentationPersonType;
 use Doctrine\ORM\EntityManagerInterface;
 use App\Repository\PresentationRepository;
+use App\Service\UploaderHelper;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class PresentationController extends AbstractController
@@ -56,13 +58,22 @@ class PresentationController extends AbstractController
     /**
      * @Route("/admin/presentation/ajout-membre-presentation", name="admin_new_presentation_person", methods={"GET","POST"})
      */
-    public function newPresentationPerson(Request $request, PresentationRepository $presentationRepo): Response
+    public function newPresentationPerson(Request $request, PresentationRepository $presentationRepo, UploaderHelper $uploaderHelper): Response
     {
         $presentationPerson = new PresentationPerson();
         $form = $this->createForm(PresentationPersonType::class, $presentationPerson);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            /** @var UploadedFile $uploadedFile */
+            $uploadedFile = $form['pictureFile']->getData();
+
+            if ($uploadedFile) {
+                $newFilename = $uploaderHelper->uploadPresentationPersonPicture($uploadedFile);
+                $presentationPerson->setPictureFilename($newFilename);
+            }
+
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($presentationPerson);
             $presentationRepo->findUniqueRow()->addPresentationPerson($presentationPerson);
@@ -79,24 +90,29 @@ class PresentationController extends AbstractController
     /**
      * @Route("/admin/presentation/editer-membre-presentation/{id}", name="admin_edit_presentation_person", methods={"GET","POST"})
      */
-    public function editPresentationPerson(Request $request, PresentationPerson $presentationPerson): Response
+    public function editPresentationPerson(Request $request, PresentationPerson $presentationPerson, UploaderHelper $uploaderHelper): Response
     {
         $form = $this->createForm(PresentationPersonType::class, $presentationPerson);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            /** @var UploadedFile $uploadedFile */
+            $uploadedFile = $form['pictureFile']->getData();
+
+            if ($uploadedFile) {
+                $newFilename = $uploaderHelper->uploadPresentationPersonPicture($uploadedFile);
+                $presentationPerson->setPictureFilename($newFilename);
+            }
+
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('admin_presentation');
         }
 
-        return $this->render('admin/newsletter_theme/edit.html.twig', [
+        return $this->render('admin/presentation/edit_person.html.twig', [
             'presentationPerson' => $presentationPerson,
             'form' => $form->createView(),
-        ]);
-
-        return $this->render('admin/presentation/edit_person.html.twig', [
-            'form' => $form->createView()
         ]);
     }
 
