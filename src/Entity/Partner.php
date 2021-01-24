@@ -2,7 +2,6 @@
 
 namespace App\Entity;
 
-use App\Repository\PartnerRepository;
 use Doctrine\ORM\Mapping as ORM;
 use DateTime;
 use Exception;
@@ -16,7 +15,6 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\PartnerRepository")
- * @UniqueEntity("name", message="Ce nom de partenaire est dejà utilisé")
  * @Vich\Uploadable()
  */
 class Partner
@@ -54,7 +52,7 @@ class Partner
      *      }
      * )
      * @Assert\File(
-     *     maxSize="2M",
+     *     maxSize="1M",
      * )
      * @Vich\UploadableField(mapping="partner_file", fileNameProperty="filenamePartner")
      */
