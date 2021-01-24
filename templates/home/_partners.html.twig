@@ -1,48 +1,18 @@
 <div class="row partners no-gutters d-flex justify-content-center text-primary-dark">
+    {% for partner in partners %}
+        <div class="col-md-5 mb-4 p-4 d-flex flex-column align-items-center">
+            <img src="{% if partner.filenamePartner is empty %}
+                                    {{ asset('build/logo-eureka.png') }}
+                            {% else %}
+                                    {{ vich_uploader_asset(partner, 'partnerFile') }}
+                                {% endif %}"
+                 alt="{{ partner.filenamePartner }}" class="mt-1 mb-2 p-1 bg-primary-dark rounded shadow">
 
-    <div class="col-md-5 mb-4 p-4 d-flex flex-column align-items-center">
-        <img class="mt-1 mb-2 p-1 bg-primary-dark rounded shadow" src="{{ asset('build/logo-miskatonic-shop.png') }}" alt="">
-        <div class="d-flex flex-column align-items-center">
-            <p class="mx-3 text-center">
-                Un magasin spécialisé dans le manga. On y trouve toutes les nouveautés, des shojo, shonen, yaoi,
-                seinen,
-                etc, mangas d'occasion, goodies, jeux, Bd, magazines,... <br>
-                Il y a presque toujours de la musique d'anime en fond. Vendeurs/Vendeuses très sympathiques et
-                accueillants,
-                qui nous font toujours rire lorsqu'on y va. <br>
-                Présence d'un rayon Jeux de Rôle et accessoires de GN.</p>
-
-            <a href="#" target="_blank" class="ml-3 btn btn-secondary text-primary-dark"><i class="fas fa-globe-americas"></i> Facebook</a>
+            <div class="d-flex flex-column align-items-center">
+                <p class="mx-3 text-center">{{ partner.presentation }}</p>
+                <a href="{{ partner.link }}" target="_blank" class="ml-3 btn btn-secondary text-primary-dark">
+                    <i class="fas fa-globe-americas"></i> Facebook</a>
+            </div>
         </div>
-    </div>
-
-    <div class="col-md-5 offset-md-1 mb-4 p-4 d-flex flex-column align-items-center">
-        <img class="mt-1 mb-2 p-1 bg-primary-dark rounded shadow" src="{{ asset('build/logo-eureka.png') }}" alt="">
-        <div class="d-flex flex-column align-items-center">
-            <p class="mx-3 text-center">
-                Idées cadeaux, décoration, jeux de société et modélisme. <br>
-                Souvent comparé à une caverne aux merveilles, Eureka vous propose un vaste choix dobjets originaux
-                et insolites.Nous avons une grande panoplie de produits : Coussins Livingston, bucolique,
-                Lomography, Artoyz, 100Drine, Ritzenhoff ,Ibride, mini hélicoptères, échecs etc.</p>
-
-            <a href="#" target="_blank" class="ml-3 btn btn-secondary text-primary-dark"><i class="fas fa-globe-americas"></i> Facebook</a>
-        </div>
-    </div>
-
-    <div class="col-md-5 offset-md-1 mb-4 p-4 d-flex flex-column align-items-center">
-        <img class="mt-1 mb-2 p-1 bg-primary-dark rounded shadow" src="{{ asset('build/logo-miskatonic-shop.png') }}" alt="">
-        <div class="d-flex flex-column align-items-center">
-            <p class="mx-3 text-center">
-                Un magasin spécialisé dans le manga. On y trouve toutes les nouveautés, des shojo, shonen, yaoi,
-                seinen,
-                etc, mangas d'occasion, goodies, jeux, Bd, magazines,... <br>
-                Il y a presque toujours de la musique d'anime en fond. Vendeurs/Vendeuses très sympathiques et
-                accueillants,
-                qui nous font toujours rire lorsqu'on y va. <br>
-                Présence d'un rayon Jeux de Rôle et accessoires de GN.</p>
-
-            <a href="#" target="_blank" class="ml-3 btn btn-secondary text-primary-dark"><i class="fas fa-globe-americas"></i> Facebook</a>
-        </div>
-    </div>
-
+    {% endfor %}
 </div>

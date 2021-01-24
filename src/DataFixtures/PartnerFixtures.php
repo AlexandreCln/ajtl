@@ -16,10 +16,10 @@ class PartnerFixtures extends Fixture
 
         for ($i = 0; $i < 5; $i++) {
             $partner = new Partner();
-            $partner->setPresentation($faker->paragraph());
+            $partner->setPresentation($faker->text(400));
             $partner->setLink($faker->url);
             $partner->setUpdatedAt(new DateTime());
-            $partner->setFilenamePartner('logo-eureka.png');
+            $partner->setFilenamePartner('');
             $manager->persist($partner);
         }
 
