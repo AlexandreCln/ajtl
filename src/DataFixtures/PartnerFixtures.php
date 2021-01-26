@@ -16,6 +16,7 @@ class PartnerFixtures extends Fixture
 
         for ($i = 0; $i < 5; $i++) {
             $partner = new Partner();
+            $partner->setName(ucfirst($faker->word));
             $partner->setPresentation($faker->text(400));
             $partner->setLink($faker->url);
             $partner->setUpdatedAt(new DateTime());

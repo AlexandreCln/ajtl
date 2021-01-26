@@ -15,6 +15,7 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\PartnerRepository")
+ * @UniqueEntity("name", message="Ce nom de partenaire est dejà utilisé")
  * @Vich\Uploadable()
  */
 class Partner
@@ -25,6 +26,16 @@ class Partner
      * @ORM\Column(type="integer")
      */
     private $id;
+
+    /**
+     * @ORM\Column(type="string", length=100)
+     * @Assert\NotBlank(message = "Ce champ ne doit pas être vide.")
+     * @Assert\Length(
+     *     max = 100,
+     *     maxMessage = "Ce nom ne peut pas faire plus de {{ limit }} caractères."
+     * )
+     */
+    private $name;
 
     /**
      * @ORM\Column(type="text")
@@ -148,6 +159,18 @@ class Partner
     public function setUpdatedAt(\DateTimeInterface $updatedAt): self
     {
         $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
+    public function getName(): ?string
+    {
+        return $this->name;
+    }
+
+    public function setName(string $name): self
+    {
+        $this->name = $name;
 
         return $this;
     }
