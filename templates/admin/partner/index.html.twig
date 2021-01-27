@@ -5,45 +5,35 @@
 {% block body %}
     <div class="container text-primary-dark">
         <h1 class="mt-5 mb-0 text-center text-lg-left">Nos partenaires</h1>
+
         <hr class="mt-2 mb-5">
 
-        <table class="table">
-            <thead>
-            <tr>
-                <th>Visuel</th>
-                <th>Nom</th>
-                <th>Présentation</th>
-                <th>Lien</th>
-                <th>actions</th>
-            </tr>
-            </thead>
-            <tbody>
+        <a href="{{ path('partner_new') }}" class="t-3 btn btn-primary-dark">
+            <i class="fas fa-plus-circle"></i> Ajouter
+            un partenaire
+        </a>
+
+        <div class="row mt-5 d-flex justify-content-center">
             {% for partner in partners %}
-                <tr>
-                    <td>
-                        <img src="{% if partner.filenamePartner is empty %}
+                <div class="col-md-4">
+                    <div class="admin-partner shadow p-3 mb-5 bg-white rounded">
+                        <h5 class="pl-5 pt-4 pb-3">{{ partner.name }}</h5>
+                        <a href="{{ path('partner_show', {'id': partner.id}) }}">
+                            <img src="{% if partner.filenamePartner is empty %}
                                     {{ asset('build/logo-eureka.png') }}
                             {% else %}
                                     {{ vich_uploader_asset(partner, 'partnerFile') }}
                                 {% endif %}"
-                             alt="{{ partner.filenamePartner }}" class="partner-picture w-100">
-                    </td>
-                    <td>{{ partner.name }}</td>
-                    <td>{{ partner.presentation }}</td>
-                    <td>{{ partner.link }}</td>
-                    <td>
-                        <a href="{{ path('partner_show', {'id': partner.id}) }}">show</a>
-                        <a href="{{ path('partner_edit', {'id': partner.id}) }}">edit</a>
-                    </td>
-                </tr>
+                                 alt="{{ partner.filenamePartner }}" class="partner-picture pb-4 w-100">
+                        </a>
+                        <p class="pl-3 pb-3 text-muted">
+                            <small>{{ partner.presentation|u.truncate(50, '...', false) }}</small></p>
+                        </p>
+                    </div>
+                </div>
             {% else %}
-                <tr>
-                    <td colspan="7">no records found</td>
-                </tr>
+                <h2>Aucun partenaire à ce jour. <a href="{{ path('partner_new') }}">Ajoutez-en un !</a></h2>
             {% endfor %}
-            </tbody>
-        </table>
-
-        <a href="{{ path('partner_new') }}">Create new</a>
+        </div>
     </div>
 {% endblock %}
