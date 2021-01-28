@@ -1,42 +1,59 @@
-{% extends 'base.html.twig' %}
+{% extends 'admin/base.html.twig' %}
 
-{% block title %}Partner{% endblock %}
+{% block title %}{{ partner.name }}{% endblock %}
 
 {% block body %}
-    <h1>Partner</h1>
+    <div class="container text-primary-dark">
+        <h1 class="mt-5 mb-0 text-center text-lg-left">Toutes les infos sur notre partenaire</h1>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ partner.id }}</td>
-            </tr>
-            <tr>
-                <th>Name</th>
-                <td>{{ partner.name }}</td>
-            </tr>
-            <tr>
-                <th>Presentation</th>
-                <td>{{ partner.presentation }}</td>
-            </tr>
-            <tr>
-                <th>Link</th>
-                <td>{{ partner.link }}</td>
-            </tr>
-            <tr>
-                <th>FilenamePartner</th>
-                <td>{{ partner.filenamePartner }}</td>
-            </tr>
-            <tr>
-                <th>UpdatedAt</th>
-                <td>{{ partner.updatedAt ? partner.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
-            </tr>
-        </tbody>
-    </table>
+        <hr class="mt-2 mb-5">
 
-    <a href="{{ path('partner_index') }}">back to list</a>
 
-    <a href="{{ path('partner_edit', {'id': partner.id}) }}">edit</a>
+        <div class="row mt-5 d-flex justify-content-center">
+            <div class="col-md-8">
+                <div class="admin-partner-show shadow p-3 mb-5 bg-white rounded">
+                    <h3 class="pl-5 pt-4 pb-3">{{ partner.name }}</h3>
 
-    {{ include('partner/_delete_form.html.twig') }}
+                    <img src="{% if partner.filenamePartner is empty %}
+                                    {{ asset('build/logo-eureka.png') }}
+                            {% else %}
+                                    {{ vich_uploader_asset(partner, 'partnerFile') }}
+                                {% endif %}"
+                         alt="{{ partner.filenamePartner }}" class="mx-auto pb-4">
+
+                    <p class="pl-3 pb-3 text-muted">
+                        <small>{{ partner.presentation }}</small>
+                    </p>
+                    <p class="link text-muted text-right">
+                        <small>
+                            Mis à jour le {{ partner.updatedAt ? partner.updatedAt|date('d-m-Y H:i:s') : '' }}
+                        </small>
+                    </p>
+                    <p class="text-right">
+                        <small>
+                            {{ partner.link }}
+                        </small>
+                    </p>
+                    <div class="pt-3">
+                        <a href="{{ path('admin_partner_edit', {id: partner.id}) }}" class="btn btn-light">Modifier</a>
+                        <a href="#" onclick="event.preventDefault(); confirm('Etes-vous certain ?') &&
+    document.getElementById('js-pin-delete-form').submit();" class="btn btn-light">Supprimer</a>
+
+                        <form id="js-partner-delete-form" action="{{ path('admin_partner_delete', {id: partner.id}) }}"
+                              method="post"
+                              style="display: none;">
+                            <input type="hidden" name="csrf_token"
+                                   value="{{ csrf_token('partner_deletion_' ~ partner.id) }}">
+                            <input type="hidden" name="_method" value="DELETE">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container text-center">
+        <a href="{{ path('admin_partner_index') }}" class="t-3 btn btn-primary-dark">
+            <i class="mr-2 fas fa-share"></i> Retour au menu
+        </a>
+    </div>
 {% endblock %}

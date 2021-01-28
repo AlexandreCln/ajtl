@@ -49,17 +49,17 @@ class AdminPartnerController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="partner_show", methods={"GET"})
+     * @Route("/{id}", name="admin_partner_show", methods={"GET"})
      */
     public function show(Partner $partner): Response
     {
-        return $this->render('partner/show.html.twig', [
+        return $this->render('admin/partner/show.html.twig', [
             'partner' => $partner,
         ]);
     }
 
     /**
-     * @Route("/{id}/edit", name="partner_edit", methods={"GET","POST"})
+     * @Route("/{id}/edit", name="admin_partner_edit", methods={"GET","POST"})
      */
     public function edit(Request $request, Partner $partner): Response
     {
@@ -79,7 +79,7 @@ class AdminPartnerController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="partner_delete", methods={"DELETE"})
+     * @Route("/{id}", name="admin_partner_delete", methods={"DELETE"})
      */
     public function delete(Request $request, Partner $partner): Response
     {
