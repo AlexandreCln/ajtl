@@ -9,25 +9,24 @@
         <hr class="mt-2 mb-5">
 
         <a href="{{ path('partner_new') }}" class="t-3 btn btn-primary-dark">
-            <i class="fas fa-plus-circle"></i> Ajouter
-            un partenaire
+            <i class="fas fa-plus-circle"></i> Ajouter un partenaire
         </a>
 
         <div class="row mt-5 d-flex justify-content-center">
             {% for partner in partners %}
                 <div class="col-md-4">
-                    <div class="admin-partner shadow p-3 mb-5 bg-white rounded">
-                        <h5 class="pl-5 pt-4 pb-3">{{ partner.name }}</h5>
+                    <div class="admin-partner-index shadow p-3 mb-5 bg-white rounded">
+                        <h3 class="pl-5 pt-4 pb-3">{{ partner.name }}</h3>
                         <a href="{{ path('partner_show', {'id': partner.id}) }}">
                             <img src="{% if partner.filenamePartner is empty %}
                                     {{ asset('build/logo-eureka.png') }}
                             {% else %}
                                     {{ vich_uploader_asset(partner, 'partnerFile') }}
                                 {% endif %}"
-                                 alt="{{ partner.filenamePartner }}" class="partner-picture pb-4 w-100">
+                                 alt="{{ partner.filenamePartner }}" class="partner-picture pb-4">
                         </a>
                         <p class="pl-3 pb-3 text-muted">
-                            <small>{{ partner.presentation|u.truncate(50, '...', false) }}</small></p>
+                            <small>{{ partner.presentation|u.truncate(50, '...', false) }}</small>
                         </p>
                     </div>
                 </div>
