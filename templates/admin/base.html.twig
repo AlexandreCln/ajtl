@@ -24,6 +24,9 @@
 
                 <a href="" class="btn btn-primary-dark" id="menu-toggle">Déconnexion</a>
             </nav>
+
+            {{ include('common/_flash-messages.html.twig') }}
+
             {% block body %}{% endblock %}
         </div>
     </div>
