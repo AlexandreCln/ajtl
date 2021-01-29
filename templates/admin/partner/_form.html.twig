@@ -1,4 +1,5 @@
 {{ form_start(form) }}
     {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+
+<input type="submit" value="{{ submitButtonText ?? 'Ajouter le partenaire' }}" class="btn btn-light" formnovalidate>
 {{ form_end(form) }}

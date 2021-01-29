@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Partner;
 use App\Form\PartnerType;
 use App\Repository\PartnerRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -16,7 +17,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class AdminPartnerController extends AbstractController
 {
     /**
-     * @Route("/", name="admin_partner_index", methods={"GET"})
+     * @Route("/", name="partner_index", methods={"GET"})
      */
     public function index(PartnerRepository $partnerRepository): Response
     {
@@ -42,14 +43,14 @@ class AdminPartnerController extends AbstractController
             return $this->redirectToRoute('partner_index');
         }
 
-        return $this->render('partner/new.html.twig', [
+        return $this->render('admin/partner/new.html.twig', [
             'partner' => $partner,
             'form' => $form->createView(),
         ]);
     }
 
     /**
-     * @Route("/{id}", name="admin_partner_show", methods={"GET"})
+     * @Route("/{id}", name="partner_show", methods={"GET"})
      */
     public function show(Partner $partner): Response
     {
@@ -59,7 +60,7 @@ class AdminPartnerController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="admin_partner_edit", methods={"GET","POST"})
+     * @Route("/{id}/edit", name="partner_edit", methods={"GET","POST"})
      */
     public function edit(Request $request, Partner $partner): Response
     {
@@ -72,21 +73,21 @@ class AdminPartnerController extends AbstractController
             return $this->redirectToRoute('partner_index');
         }
 
-        return $this->render('partner/edit.html.twig', [
+        return $this->render('admin/partner/edit.html.twig', [
             'partner' => $partner,
             'form' => $form->createView(),
         ]);
     }
 
     /**
-     * @Route("/{id}", name="admin_partner_delete", methods={"DELETE"})
+     * @Route("/{id}", name="partner_delete", methods={"DELETE"})
      */
-    public function delete(Request $request, Partner $partner): Response
+    public function delete(Request $request, Partner $partner, EntityManagerInterface $em): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$partner->getId(), $request->request->get('_token'))) {
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->remove($partner);
-            $entityManager->flush();
+        if ($this->isCsrfTokenValid('partner_deletion_' . $partner->getId(), $request->request->get('csrf_token'))) {
+            $em->remove($partner);
+            $em->flush();
+
         }
 
         return $this->redirectToRoute('partner_index');

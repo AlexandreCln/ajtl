@@ -8,7 +8,6 @@
 
         <hr class="mt-2 mb-5">
 
-
         <div class="row mt-5 d-flex justify-content-center">
             <div class="col-md-8">
                 <div class="admin-partner-show shadow p-3 mb-5 bg-white rounded">
@@ -35,11 +34,11 @@
                         </small>
                     </p>
                     <div class="pt-3">
-                        <a href="{{ path('admin_partner_edit', {id: partner.id}) }}" class="btn btn-light">Modifier</a>
+                        <a href="{{ path('partner_edit', {id: partner.id}) }}" class="btn btn-light">Modifier</a>
                         <a href="#" onclick="event.preventDefault(); confirm('Etes-vous certain ?') &&
-    document.getElementById('js-pin-delete-form').submit();" class="btn btn-light">Supprimer</a>
+    document.getElementById('js-partner-delete-form').submit();" class="btn btn-light">Supprimer</a>
 
-                        <form id="js-partner-delete-form" action="{{ path('admin_partner_delete', {id: partner.id}) }}"
+                        <form id="js-partner-delete-form" action="{{ path('partner_delete', {id: partner.id}) }}"
                               method="post"
                               style="display: none;">
                             <input type="hidden" name="csrf_token"
@@ -52,7 +51,7 @@
         </div>
     </div>
     <div class="container text-center">
-        <a href="{{ path('admin_partner_index') }}" class="t-3 btn btn-primary-dark">
+        <a href="{{ path('partner_index') }}" class="mt-3 mb-3 btn btn-primary-dark">
             <i class="mr-2 fas fa-share"></i> Retour au menu
         </a>
     </div>
