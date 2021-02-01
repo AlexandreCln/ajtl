@@ -44,7 +44,7 @@ class Partner
     private $presentation;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="string", length=255)
      * @Assert\NotBlank(message = "Ce champ ne doit pas être vide.")
      * @Assert\Length(
      *     max = 255,
@@ -132,7 +132,7 @@ class Partner
         return $this->presentation;
     }
 
-    public function setPresentation(string $presentation): self
+    public function setPresentation(?string $presentation): self
     {
         $this->presentation = $presentation;
 
@@ -144,7 +144,7 @@ class Partner
         return $this->link;
     }
 
-    public function setLink(string $link): self
+    public function setLink(?string $link): self
     {
         $this->link = $link;
 
@@ -168,7 +168,7 @@ class Partner
         return $this->name;
     }
 
-    public function setName(string $name): self
+    public function setName(?string $name): self
     {
         $this->name = $name;
 
