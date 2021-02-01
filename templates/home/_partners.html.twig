@@ -4,7 +4,8 @@
             <img src="{% if partner.filenamePartner is empty %}
                                     {{ asset('build/logo-eureka.png') }}
                             {% else %}
-                                    {{ vich_uploader_asset(partner, 'partnerFile') }}
+                                    {{ vich_uploader_asset(partner, 'partnerFile') |
+            imagine_filter('squared_thumbnail_medium') }}
                                 {% endif %}"
                  alt="{{ partner.filenamePartner }}" class="mt-1 mb-2 p-1 bg-primary-dark rounded shadow">
 
