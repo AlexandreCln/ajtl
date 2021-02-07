@@ -76,6 +76,11 @@ class Partner
     private $filenamePartner;
 
     /**
+     * @ORM\Column(type="datetime", nullable=true)
+     */
+    private $updatedAt;
+
+    /**
      * @return File|null
      */
     public function getPartnerFile(): ?File
@@ -116,11 +121,6 @@ class Partner
         $this->filenamePartner = $filenamePartner;
         return $this;
     }
-
-    /**
-     * @ORM\Column(type="datetime")
-     */
-    private $updatedAt;
 
     public function getId(): ?int
     {

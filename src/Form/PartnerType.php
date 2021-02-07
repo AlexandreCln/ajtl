@@ -3,7 +3,6 @@
 namespace App\Form;
 
 use App\Entity\Partner;
-use Symfony\Component\DomCrawler\Field\TextareaFormField;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
@@ -18,7 +17,7 @@ class PartnerType extends AbstractType
     {
         $builder
             ->add('partnerFile', VichImageType::class, [
-                'label' => 'Image (JPG or PNG file)',
+                'label' => 'Image (JPG ou PNG)',
                 'required' => false,
                 'allow_delete' => true,
                 'delete_label' => 'Supprimer l\'image ?',
@@ -35,8 +34,7 @@ class PartnerType extends AbstractType
             ])
             ->add('link', EmailType::class, [
                 'label' => 'Adresse du site',
-            ])
-        ;
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver)

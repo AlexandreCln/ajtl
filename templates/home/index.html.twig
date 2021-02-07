@@ -29,7 +29,9 @@
     <h2 id="location" class="mt-4 mb-2 text-primary-dark text-center">Où nous trouver ?</h2>
     {% include 'home/_access-info.html.twig' %}
 
-    <h2 id="partners" class="mt-4 mb-2 text-primary-dark text-center mt-5">Nos partenaires</h2>
+    {% if partners %}
+        <h2 id="partners" class="mt-4 mb-2 text-primary-dark text-center mt-5">Nos partenaires</h2>
+    {% endif %}
     {% include 'home/_partners.html.twig' %}
 
 {% endblock %}

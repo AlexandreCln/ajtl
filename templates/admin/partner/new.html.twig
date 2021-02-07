@@ -5,16 +5,11 @@
 {% block body %}
     <div class="container text-primary-dark">
         <h1 class="mt-5 mb-0 text-center text-lg-left">Ajouter un partenaire</h1>
-
         <hr class="mt-2 mb-5">
 
+        <a href="{{ path('partner_index') }}" class="btn btn-secondary">
+            <i class="mr-2 fas fa-share"></i> Retour au menu
+        </a>
         {{ include('admin/partner/_form.html.twig') }}
-
-        <div class="container mb-5 text-center">
-
-            <a href="{{ path('partner_index') }}" class="mt-3 btn btn-primary-dark">
-                <i class="mr-2 fas fa-share"></i> Retour au menu
-            </a>
-        </div>
     </div>
 {% endblock %}
